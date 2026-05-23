@@ -308,13 +308,55 @@
     padding-top: 4px;
   }
 
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
   .project-tag {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
     letter-spacing: 2px;
     color: var(--accent);
     text-transform: uppercase;
-    margin-bottom: 12px;
+  }
+
+  /* Honest project type label */
+  .project-type-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .badge-practice {
+    background: rgba(245, 166, 35, 0.15);
+    color: #f5a623;
+    border: 1px solid rgba(245, 166, 35, 0.3);
+  }
+
+  .badge-training {
+    background: rgba(99, 179, 237, 0.15);
+    color: #63b3ed;
+    border: 1px solid rgba(99, 179, 237, 0.3);
+  }
+
+  .badge-selfstarted {
+    background: rgba(154, 230, 180, 0.15);
+    color: #68d391;
+    border: 1px solid rgba(154, 230, 180, 0.3);
+  }
+
+  .badge-probono {
+    background: rgba(183, 148, 244, 0.15);
+    color: #b794f4;
+    border: 1px solid rgba(183, 148, 244, 0.3);
   }
 
   .project-title {
@@ -529,13 +571,12 @@
   <h2 class="section-title">Who I Am</h2>
   <div class="about-grid">
     <div class="about-text fade-in">
-      <p>I'm a Digital Marketer from Hyderabad with a passion for SEO, social media strategy, and data-driven marketing. Recently completed professional training in Digital Marketing and have built 6 real portfolio projects that showcase hands-on skills.</p>
-      <p>I combine analytical thinking with creative execution — using tools like SEMrush, Google Analytics 4, Canva, and ChatGPT to design campaigns that deliver measurable results. My background in Electrical Engineering helps me approach marketing problems with structured problem-solving and attention to detail.</p>
-      <p>While I'm early in my career, my portfolio projects demonstrate genuine capability in SEO audits, social media management, content strategy, and analytics. I'm actively seeking a role where I can contribute, learn, and grow with a team.</p>
+      <p>I'm a Digital Marketer from Hyderabad with a passion for SEO, social media strategy, and data-driven marketing. I completed professional training at Digital Medha & Advertising and have built 6 portfolio projects that demonstrate real, hands-on skills.</p>
+      <p>My journey into marketing started from an unconventional place — I hold a B.Tech in Electrical Engineering. That background taught me structured thinking and analytical problem-solving, which I now apply directly to keyword research, campaign analysis, and performance reporting. I made a deliberate decision to pivot into digital marketing because it's where I genuinely want to build my career.</p>
+      <p>I work with tools like SEMrush, Google Analytics 4, Canva, and ChatGPT to design campaigns that deliver measurable results. I'm actively seeking my first full-time or internship role where I can contribute to a team, keep learning, and grow fast.</p>
       <div class="contact-links">
         <a href="mailto:kunkumallasravani89@gmail.com" class="contact-link"><span class="icon">✉</span>kunkumallasravani89@gmail.com</a>
         <a href="https://www.linkedin.com/in/kunkumalla-sravanii-1a1a62186" class="contact-link" target="_blank"><span class="icon">in</span>linkedin.com/in/kunkumalla-sravanii</a>
-        <a href="tel:9441728913" class="contact-link"><span class="icon">☏</span>+91 9441728913</a>
       </div>
     </div>
     <div class="about-highlights fade-in">
@@ -567,11 +608,14 @@
   <h2 class="section-title">Projects & Case Studies</h2>
   <div class="projects-list">
 
-    <!-- PROJECT 01 — SEO Project (PDF button added) -->
+    <!-- PROJECT 01 -->
     <div class="project-item fade-in">
       <div class="project-num">01</div>
       <div class="project-content">
-        <p class="project-tag">SEO & Content Marketing</p>
+        <div class="project-header">
+          <p class="project-tag">SEO & Content Marketing</p>
+          <span class="project-type-badge badge-practice">Practice Project</span>
+        </div>
         <h3 class="project-title">Digital Marketing SEO Project</h3>
         <p class="project-desc">Conducted end-to-end keyword research and on-page SEO optimization. Created and published SEO-optimized blog content, monitored performance via Google Analytics, and used AI tools to accelerate content production by 40%.</p>
         <div class="project-results">
@@ -591,16 +635,20 @@
       </div>
     </div>
 
+    <!-- PROJECT 02 -->
     <div class="project-item fade-in">
       <div class="project-num">02</div>
       <div class="project-content">
-        <p class="project-tag">Social Media Management</p>
-        <h3 class="project-title">Instagram & Facebook Growth — Client Pages</h3>
-        <p class="project-desc">Managed Instagram and Facebook content calendars for 2+ client pages. Designed branded creatives using Canva, maintained consistent visual identity, and implemented a structured weekly posting strategy that drove measurable organic growth.</p>
+        <div class="project-header">
+          <p class="project-tag">Social Media Management</p>
+          <span class="project-type-badge badge-practice">Practice Project</span>
+        </div>
+        <h3 class="project-title">Instagram & Facebook Growth — Social Media Pages</h3>
+        <p class="project-desc">Managed Instagram and Facebook content calendars as part of hands-on training. Designed branded creatives using Canva, maintained consistent visual identity, and implemented a structured weekly posting strategy to drive organic growth.</p>
         <div class="project-results">
           <span class="result-badge"><span class="dot"></span>30% Engagement Growth</span>
           <span class="result-badge"><span class="dot"></span>20+ Branded Creatives Designed</span>
-          <span class="result-badge"><span class="dot"></span>2+ Client Pages Managed</span>
+          <span class="result-badge"><span class="dot"></span>2+ Pages Managed</span>
         </div>
         <div style="margin-top:16px;">
           <a href="Social_Media_Performance_Report_2026.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#7C3AED; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📱 View Social Media Report</a>
@@ -614,11 +662,15 @@
       </div>
     </div>
 
+    <!-- PROJECT 03 -->
     <div class="project-item fade-in">
       <div class="project-num">03</div>
       <div class="project-content">
-        <p class="project-tag">Personal Brand — Content Marketing</p>
-        <h3 class="project-title">Digital Marketing Instagram Page (Self-Initiated)</h3>
+        <div class="project-header">
+          <p class="project-tag">Personal Brand — Content Marketing</p>
+          <span class="project-type-badge badge-selfstarted">Self-Initiated</span>
+        </div>
+        <h3 class="project-title">Digital Marketing Instagram Page</h3>
         <p class="project-desc">Built and manage a personal Instagram page focused on Digital Marketing tips, SEO strategies, and content marketing insights. Creating original posts, reels, and carousels while applying organic growth strategies and tracking performance metrics weekly.</p>
         <div class="project-results">
           <span class="result-badge"><span class="dot"></span>Original Posts, Reels & Carousels</span>
@@ -636,10 +688,14 @@
       </div>
     </div>
 
+    <!-- PROJECT 04 -->
     <div class="project-item fade-in">
       <div class="project-num">04</div>
       <div class="project-content">
-        <p class="project-tag">AI + Marketing</p>
+        <div class="project-header">
+          <p class="project-tag">AI + Marketing</p>
+          <span class="project-type-badge badge-probono">Pro Bono Project</span>
+        </div>
         <h3 class="project-title">AI-Assisted Content Strategy — Vyshnav Padband</h3>
         <p class="project-desc">Built a complete 30-post Instagram content strategy for an event decoration brand using ChatGPT for ideation and Canva AI for copy refinement. Includes 5 content pillars, caption templates, hashtag bank, and a 4-week posting schedule — reducing content planning time by 70%.</p>
         <div class="project-results">
@@ -659,12 +715,16 @@
       </div>
     </div>
 
+    <!-- PROJECT 05 -->
     <div class="project-item fade-in">
       <div class="project-num">05</div>
       <div class="project-content">
-        <p class="project-tag">Analytics & Data</p>
+        <div class="project-header">
+          <p class="project-tag">Analytics & Data</p>
+          <span class="project-type-badge badge-training">Training Project</span>
+        </div>
         <h3 class="project-title">GA4 Monthly Performance Report — Google Merchandise Store</h3>
-        <p class="project-desc">Analysed 28 days of real traffic data from Google Analytics 4 Demo Account. Built a full monthly performance report covering traffic acquisition, engagement metrics, top pages, and revenue — with actionable insights and recommendations based on data.</p>
+        <p class="project-desc">Analysed 28 days of real traffic data from the Google Analytics 4 Demo Account. Built a full monthly performance report covering traffic acquisition, engagement metrics, top pages, and revenue — with actionable insights and recommendations based on data.</p>
         <div class="project-results">
           <span class="result-badge"><span class="dot"></span>98,941 Sessions Analysed</span>
           <span class="result-badge"><span class="dot"></span>$166K Revenue Tracked</span>
@@ -682,10 +742,14 @@
       </div>
     </div>
 
+    <!-- PROJECT 06 -->
     <div class="project-item fade-in">
       <div class="project-num">06</div>
       <div class="project-content">
-        <p class="project-tag">SEO Audit & Competitive Analysis</p>
+        <div class="project-header">
+          <p class="project-tag">SEO Audit & Competitive Analysis</p>
+          <span class="project-type-badge badge-practice">Practice Project</span>
+        </div>
         <h3 class="project-title">SEO Competitor Audit Report — Hyderabad Restaurant Niche</h3>
         <p class="project-desc">Conducted a full SEO competitive audit comparing three Hyderabad restaurant brands — Paradise Biryani, Bawarchi, and Cafe Bahar. Covered technical SEO, on-page analysis, keyword gap identification, backlink profiling, and traffic trends. Delivered a client-ready report with 7 priority recommendations including schema markup, SSL fixes, citation building, and location-specific landing pages.</p>
         <div class="project-results">
