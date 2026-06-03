@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Samples — Kunkumalla Sravani</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --accent: #c8501a;
+    --soft: #f5f0e8;
+    --muted: #7a7065;
+    --border: #e0d8cc;
+    --white: #fdfcfa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* Header */
+  header {
+    background: var(--ink);
+    color: var(--white);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(200,80,26,0.15);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(200,80,26,0.08);
+  }
+  .header-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .byline { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; font-weight: 500; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 42px); line-height: 1.2; margin-bottom: 14px; }
+  header p { font-size: 15px; color: rgba(253,252,250,0.65); max-width: 500px; font-weight: 300; }
+
+  /* Nav tabs */
+  nav {
+    background: var(--soft);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-inner { max-width: 760px; margin: 0 auto; display: flex; gap: 0; overflow-x: auto; }
+  .tab {
+    padding: 16px 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* Main content */
+  main { max-width: 760px; margin: 0 auto; padding: 0 40px 80px; }
+
+  /* Article */
+  .article { display: none; padding-top: 50px; }
+  .article.active { display: block; }
+
+  .article-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; background: var(--accent); color: white;
+  }
+  .read-time { font-size: 13px; color: var(--muted); }
+
+  .article h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .article .subtitle {
+    font-size: 16px; color: var(--muted); font-weight: 300;
+    margin-bottom: 32px; font-style: italic;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 28px;
+  }
+
+  .article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px; margin: 36px 0 12px;
+    color: var(--ink);
+  }
+  .article p { font-size: 15px; margin-bottom: 18px; color: #2a2a3e; font-weight: 300; }
+  .article strong { font-weight: 500; color: var(--ink); }
+
+  .article ul, .article ol {
+    margin: 12px 0 20px 20px;
+  }
+  .article li { font-size: 15px; margin-bottom: 8px; color: #2a2a3e; font-weight: 300; }
+
+  .callout {
+    background: var(--soft);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin: 28px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--muted);
+  }
+
+  .tip-box {
+    background: #fff8f5;
+    border: 1px solid #f0d5c8;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 28px 0;
+  }
+  .tip-box .tip-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  .tip-box p { margin: 0; font-size: 14px; }
+
+  .article-footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 24px 36px; }
+    main { padding: 0 24px 60px; }
+    .tab { padding: 14px 16px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="byline">Writing Portfolio</p>
+    <h1>Kunkumalla Sravani<br><em style="font-weight:400;font-size:0.75em;opacity:0.8">Digital Marketing Writer</em></h1>
+    <p>3 original articles covering SEO, Social Media Marketing, and Content Strategy</p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="tab active" onclick="showArticle(0)">01 — SEO</button>
+    <button class="tab" onclick="showArticle(1)">02 — Social Media</button>
+    <button class="tab" onclick="showArticle(2)">03 — Content Strategy</button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- Article 1: SEO -->
+  <div class="article active">
+    <div class="article-meta">
+      <span class="tag">SEO</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <h2>5 On-Page SEO Mistakes That Are Quietly Killing Your Rankings</h2>
+    <p class="subtitle">You don't need a technical background to fix these — just the right checklist.</p>
+
+    <p>Most website owners spend months creating content, then wonder why Google isn't sending them traffic. The frustrating truth? The problem usually isn't the content itself — it's a handful of on-page SEO errors that are easy to miss and even easier to fix.</p>
+
+    <p>Here are five mistakes I see repeatedly, and exactly how to correct them.</p>
+
+    <h3>1. Writing Title Tags for Humans (Not Search Engines)</h3>
+    <p>Your title tag is the single most important on-page SEO element, yet most people write it like a creative headline. While readability matters, your <strong>primary keyword must appear early</strong> — ideally in the first 3 words.</p>
+
+    <div class="callout">Instead of "Why Your Business Needs a Digital Presence in 2026," try "Digital Marketing Strategy for Small Businesses — 2026 Guide."</div>
+
+    <p>Keep title tags between 50–60 characters. Anything longer gets cut off in search results, which hurts your click-through rate.</p>
+
+    <h3>2. Ignoring Meta Descriptions</h3>
+    <p>Meta descriptions don't directly impact rankings, but they massively affect whether someone <em>clicks</em> your result. Think of it as your 160-character sales pitch. Include your keyword naturally, add a clear benefit, and end with a soft call to action like "Learn more" or "Find out how."</p>
+
+    <h3>3. Forgetting Internal Links</h3>
+    <p>Internal linking tells Google which pages on your site are important. Every new blog post should link to at least 2–3 existing pages on your site using descriptive anchor text. Not "click here" — but "on-page SEO checklist" or "keyword research guide."</p>
+
+    <div class="tip-box">
+      <p class="tip-label">Quick Win</p>
+      <p>Open Google Search Console right now. Find your top 5 pages by clicks. Then go into each one and add 2 internal links to other relevant pages. Takes 20 minutes and most people never do it.</p>
+    </div>
+
+    <h3>4. Using the Same Keyword on Multiple Pages</h3>
+    <p>This is called keyword cannibalization — and it confuses Google. If two of your pages target "best SEO tools," Google doesn't know which one to rank, so it often ranks neither well. Audit your content and assign one primary keyword per page.</p>
+
+    <h3>5. Skipping Header Tag Structure</h3>
+    <p>Your page should have one H1 (the main title), followed by H2s for major sections, and H3s for sub-points. This structure helps both readers and search engine crawlers understand your content hierarchy. Your H1 should always include your primary keyword.</p>
+
+    <p>None of these fixes require a developer or a paid SEO tool. A free account on Google Search Console and 30 minutes of focused work can move the needle more than any content overhaul.</p>
+
+    <div class="article-footer">Written by Kunkumalla Sravani · Digital Marketing Professional · Hyderabad</div>
+  </div>
+
+  <!-- Article 2: Social Media -->
+  <div class="article">
+    <div class="article-meta">
+      <span class="tag" style="background:#3b5998">Social Media</span>
+      <span class="read-time">4 min read</span>
+    </div>
+    <h2>Why Your Instagram Posts Aren't Getting Reach — And What to Do This Week</h2>
+    <p class="subtitle">The algorithm didn't change overnight. Your content strategy did.</p>
+
+    <p>Every few months, a wave of posts appears claiming "Instagram reach is dead." The reality is more specific: <strong>reach for low-engagement content is down</strong>. Content that earns saves, shares, and comments is performing better than ever.</p>
+
+    <p>Here's what's actually happening — and a practical fix for each issue.</p>
+
+    <h3>The Algorithm Rewards Saves and Shares, Not Just Likes</h3>
+    <p>Instagram's ranking system has shifted significantly. In 2026, the platform confirmed that <strong>saves and shares carry more weight</strong> than likes and comments when determining how widely to distribute a post.</p>
+
+    <p>Ask yourself: is your content worth saving? Does it teach something someone would want to reference later? Does it make someone think "I need to send this to my friend"? If the answer is no, the algorithm agrees.</p>
+
+    <div class="callout">"Content that educates earns saves. Content that entertains earns shares. Content that does both earns reach." — a principle worth pinning to your wall.</div>
+
+    <h3>Posting Frequency Isn't the Problem — Consistency Is</h3>
+    <p>Posting 7 times one week and then disappearing for 10 days trains the algorithm to deprioritize your account. Instagram's system rewards <strong>predictable, consistent publishers</strong>. Three posts a week, every week, outperforms seven posts in a burst.</p>
+
+    <p>Build a content calendar — even a simple one in Notion or Google Sheets — and stick to it. Your audience and the algorithm both appreciate reliability.</p>
+
+    <h3>Hashtags in 2026: Less Is More</h3>
+    <p>The days of cramming 30 hashtags into every post are over. Instagram itself recommends using <strong>3–5 highly relevant hashtags</strong>. Focus on niche hashtags (under 500K posts) where your content can actually surface, rather than massive tags where it instantly disappears.</p>
+
+    <div class="tip-box">
+      <p class="tip-label">This Week's Action</p>
+      <p>Pick your last 9 posts. For each one, ask: does this teach, entertain, or inspire? If more than 5 say "no" — that's your reach problem, not the algorithm.</p>
+    </div>
+
+    <h3>Reels Are Still the Fastest Growth Lever</h3>
+    <p>Organic reach on static posts has declined, but Reels continue to be pushed to non-followers. Even a simple 15-second tip video — filmed on your phone, edited in CapCut — can reach 10x more people than a carousel. If you're not posting at least one Reel per week, you're leaving reach on the table.</p>
+
+    <p>The brands and creators growing on Instagram right now aren't gaming the algorithm — they're creating content people genuinely want to save and share. That's the only sustainable strategy.</p>
+
+    <div class="article-footer">Written by Kunkumalla Sravani · Digital Marketing Professional · Hyderabad</div>
+  </div>
+
+  <!-- Article 3: Content Strategy -->
+  <div class="article">
+    <div class="article-meta">
+      <span class="tag" style="background:#2e7d52">Content Strategy</span>
+      <span class="read-time">5 min read</span>
+    </div>
+    <h2>How to Build a Content Calendar That You'll Actually Stick To</h2>
+    <p class="subtitle">Most content plans fail in week two. Here's how to build one that doesn't.</p>
+
+    <p>Content calendars have a bad reputation — not because they don't work, but because most people build them wrong. They plan for an ideal version of themselves that has unlimited time and endless ideas, then feel like failures when reality kicks in.</p>
+
+    <p>A good content calendar isn't ambitious. It's <em>realistic</em>.</p>
+
+    <h3>Step 1: Decide Your Publishing Frequency First</h3>
+    <p>Before you think about topics, decide how many pieces of content you can realistically produce per week — on your worst week, not your best. For most solo marketers or small teams, that's <strong>3–5 posts across all platforms</strong>.</p>
+
+    <p>Starting small and staying consistent builds more momentum than starting big and burning out. You can always scale up; recovering from a content gap is harder.</p>
+
+    <h3>Step 2: Build Content Pillars, Not Just Topics</h3>
+    <p>Content pillars are the 3–4 core themes your brand consistently talks about. Every piece of content should fit into one pillar. This structure prevents the "what do I post today?" panic and ensures your brand voice stays consistent.</p>
+
+    <div class="callout">Example pillars for a digital marketing page: (1) SEO tips, (2) Social media growth, (3) Tool reviews and tutorials, (4) Behind-the-scenes / personal brand.</div>
+
+    <p>With 4 pillars and a 4-post-per-week schedule, you simply rotate — one post per pillar per week. The calendar practically fills itself.</p>
+
+    <h3>Step 3: Batch-Create, Then Schedule</h3>
+    <p>The biggest productivity mistake in content creation is writing and posting on the same day. Instead, <strong>dedicate one block of time per week to creating content</strong> — write all your captions, design your visuals, record your videos — then schedule everything at once using a tool like Buffer or Meta Business Suite.</p>
+
+    <div class="tip-box">
+      <p class="tip-label">Time-Saving Tip</p>
+      <p>One long-form blog post or LinkedIn article can be repurposed into 3 Instagram carousels, 2 tweet threads, and 1 email newsletter. Create once, distribute many times.</p>
+    </div>
+
+    <h3>Step 4: Review and Adjust Monthly</h3>
+    <p>A content calendar is a living document, not a contract. At the end of each month, spend 20 minutes reviewing your analytics. Which posts got the most saves? The most reach? Which topics fell flat? Let data — not gut feeling — guide next month's plan.</p>
+
+    <p>Track at minimum: reach, saves, profile visits, and follower growth. These four metrics tell you whether your content is working before you need to see revenue impact.</p>
+
+    <h3>The Simple Template</h3>
+    <p>You don't need fancy software. A Google Sheet with five columns works perfectly: <strong>Date, Platform, Pillar, Content Idea, Status</strong>. That's it. Add a "Performance Notes" column after publishing and you have a complete content management system for free.</p>
+
+    <p>Consistency beats creativity in content marketing — at least in the beginning. Show up reliably, track what works, and double down on it. That's the entire strategy.</p>
+
+    <div class="article-footer">Written by Kunkumalla Sravani · Digital Marketing Professional · Hyderabad</div>
+  </div>
+
+</main>
+
+<script>
+  function showArticle(index) {
+    document.querySelectorAll('.article').forEach((a, i) => {
+      a.classList.toggle('active', i === index);
+    });
+    document.querySelectorAll('.tab').forEach((t, i) => {
+      t.classList.toggle('active', i === index);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
