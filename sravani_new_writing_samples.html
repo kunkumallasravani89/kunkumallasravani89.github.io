@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Samples — Kunkumalla Sravani</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #1a1a1a;
+    background: #faf9f6;
+  }
+
+  header {
+    background: #1a1a1a;
+    color: #faf9f6;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+  }
+
+  header p {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #a0a0a0;
+    font-weight: 300;
+  }
+
+  .toc {
+    max-width: 680px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+
+  .toc h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+
+  .toc-list {
+    list-style: none;
+    border-left: 2px solid #e0dcd4;
+    padding-left: 1.2rem;
+  }
+
+  .toc-list li {
+    margin-bottom: 0.6rem;
+  }
+
+  .toc-list a {
+    text-decoration: none;
+    color: #3a3a3a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .toc-list a:hover { color: #c0562a; }
+
+  .toc-list .tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-left: 0.5rem;
+  }
+
+  .divider {
+    max-width: 680px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #e0dcd4;
+  }
+
+  article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .article-category {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #c0562a;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  .article-category.social { background: #2a6ec0; }
+  .article-category.strategy { background: #2a9c5a; }
+
+  .article-read {
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 0.05em;
+  }
+
+  article h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111;
+    margin-bottom: 0.6rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.05rem;
+    color: #666;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0dcd4;
+  }
+
+  article p {
+    margin-bottom: 1.3rem;
+    color: #2c2c2c;
+  }
+
+  article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111;
+    margin: 2rem 0 0.6rem;
+  }
+
+  article ul, article ol {
+    padding-left: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+
+  article li {
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+  }
+
+  .callout {
+    background: #f0ede6;
+    border-left: 3px solid #c0562a;
+    padding: 1rem 1.2rem;
+    margin: 1.8rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout.blue { border-left-color: #2a6ec0; background: #edf2fa; }
+  .callout.green { border-left-color: #2a9c5a; background: #edf7f1; }
+
+  .callout p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #444;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #111;
+  }
+
+  .key-takeaways {
+    background: #1a1a1a;
+    color: #faf9f6;
+    padding: 1.5rem 1.8rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+  }
+
+  .key-takeaways h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+  }
+
+  .key-takeaways ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .key-takeaways li {
+    color: #e0dcd4;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 0.08em;
+    border-top: 1px solid #e0dcd4;
+    margin-top: 2rem;
+  }
+
+  footer a { color: #c0562a; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Kunkumalla Sravani</h1>
+  <p>Writing Samples &nbsp;·&nbsp; SEO Content &nbsp;·&nbsp; Digital Marketing</p>
+</header>
+
+<div class="toc" style="margin-top:2.5rem;">
+  <h2>Contents</h2>
+  <ul class="toc-list">
+    <li><a href="#article1">Technical SEO Checklist for 2026</a> <span class="tag">SEO</span></li>
+    <li><a href="#article2">Why LinkedIn Outperforms Instagram for B2B Brands</a> <span class="tag">Social Media</span></li>
+    <li><a href="#article3">How to Build a 90-Day Content Strategy from Scratch</a> <span class="tag">Content Strategy</span></li>
+  </ul>
+</div>
+
+<hr class="divider">
+
+<!-- ARTICLE 1 -->
+<article id="article1">
+  <div class="article-meta">
+    <span class="article-category">SEO</span>
+    <span class="article-read">7 min read</span>
+  </div>
+  <h2>The Technical SEO Checklist Every Website Needs in 2026</h2>
+  <p class="article-subtitle">Search engine algorithms have grown increasingly sophisticated. Here is what your technical foundation must look like to compete in today's organic landscape.</p>
+
+  <p>Most content teams invest considerable effort in crafting well-researched, well-written articles — and then wonder why those articles never rank. The answer, more often than not, lies not in the content itself but in the technical infrastructure that supports it. Search engines cannot effectively index or reward content that sits on a poorly optimised website.</p>
+
+  <p>Technical SEO refers to the set of optimisations made to a website's architecture, performance, and crawlability that allow search engines to access, understand, and rank its pages accurately. Unlike on-page SEO — which focuses on content quality and keyword usage — technical SEO operates largely behind the scenes.</p>
+
+  <p>This checklist covers the foundational technical elements that every website, regardless of size or industry, must address in 2025.</p>
+
+  <h3>1. Core Web Vitals: Google's Performance Benchmark</h3>
+  <p>Google officially uses Core Web Vitals as a ranking signal, which means page experience is now a measurable factor in your organic position. The three metrics to monitor are <strong>Largest Contentful Paint (LCP)</strong>, which measures loading speed; <strong>Interaction to Next Paint (INP)</strong>, which replaced First Input Delay and evaluates responsiveness; and <strong>Cumulative Layout Shift (CLS)</strong>, which tracks visual stability.</p>
+
+  <p>A passing score on all three does not guarantee top rankings, but a failing score will actively suppress them. Use Google Search Console and PageSpeed Insights to audit your scores regularly.</p>
+
+  <div class="callout">
+    <p>Target benchmarks: LCP under 2.5 seconds, INP under 200 milliseconds, and CLS below 0.1. Pages meeting all three thresholds are considered "good" by Google standards.</p>
+  </div>
+
+  <h3>2. Mobile-First Indexing Is No Longer Optional</h3>
+  <p>Google indexes the mobile version of your website first. If your desktop site contains content, structured data, or internal links that your mobile version does not, those elements are effectively invisible to the crawler. Ensure that your mobile and desktop versions contain identical content and that your site uses responsive design rather than a separate mobile URL structure.</p>
+
+  <h3>3. HTTPS and Site Security</h3>
+  <p>A site operating on HTTP rather than HTTPS is penalised in rankings and flagged as "Not Secure" in most major browsers. If your SSL certificate has lapsed or was never installed, this must be addressed immediately. Beyond the ranking benefit, HTTPS is a basic trust signal for users — particularly relevant for e-commerce and lead generation pages.</p>
+
+  <h3>4. Crawl Budget and Internal Linking</h3>
+  <p>Search engine bots allocate a finite number of crawl requests to each website. Wasting this budget on duplicate pages, broken links, or redirect chains means that valuable content may go undiscovered. Conduct a crawl audit using tools such as Screaming Frog or SEMrush to identify and resolve these issues. A clean, logical internal linking structure also helps distribute page authority across your site and guides users to related content.</p>
+
+  <h3>5. Structured Data and Schema Markup</h3>
+  <p>Schema markup communicates explicitly to search engines what your content is about. Implementing the correct schema type — whether Article, Product, FAQ, or LocalBusiness — improves the likelihood of earning rich results in search, which command significantly higher click-through rates than standard listings.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>Core Web Vitals are a confirmed ranking factor — audit them monthly</li>
+      <li>Ensure mobile and desktop versions contain identical content</li>
+      <li>HTTPS is non-negotiable for trust and rankings</li>
+      <li>Crawl audits should be conducted quarterly to catch issues early</li>
+      <li>Schema markup increases click-through rates from search results</li>
+    </ul>
+  </div>
+
+  <p>Technical SEO is not a one-time project. Websites evolve, algorithms update, and new issues emerge with every content addition or site change. Establishing a routine audit cadence — monthly for Core Web Vitals, quarterly for full crawl analysis — ensures that your technical foundation consistently supports the content your team works hard to produce.</p>
+</article>
+
+<hr class="divider">
+
+<!-- ARTICLE 2 -->
+<article id="article2">
+  <div class="article-meta">
+    <span class="article-category social">Social Media</span>
+    <span class="article-read">6 min read</span>
+  </div>
+  <h2>Why LinkedIn Consistently Outperforms Instagram for B2B Brands — And What to Do About It</h2>
+  <p class="article-subtitle">Platform selection is a strategic decision. For business-to-business companies, the data makes a compelling case for prioritising LinkedIn over more visually-driven alternatives.</p>
+
+  <p>In digital marketing conversations, Instagram tends to receive disproportionate attention. It is visually compelling, its advertising tools are sophisticated, and its user base is vast. For consumer-facing brands, this attention is well-founded. For B2B companies, however, the instinct to follow Instagram's cultural momentum can lead to misallocated budgets and disappointing results.</p>
+
+  <p>The distinction is not that Instagram is ineffective — it is that LinkedIn is structurally better suited to the B2B purchase journey, and the evidence for this is consistent across industries and company sizes.</p>
+
+  <h3>The Audience Composition Difference</h3>
+  <p>LinkedIn's user base is defined by professional intent. Its members log in to consume industry news, evaluate vendors, and advance their careers. This means that when a B2B brand publishes content on LinkedIn, it is reaching an audience that is already in a professional mindset — one that is receptive to content about business challenges, solutions, and industry developments.</p>
+
+  <p>Instagram's audience, while enormous, is in a predominantly leisure mindset. Users scroll for entertainment, social connection, and inspiration. B2B content does not naturally fit this context, and the platform's algorithm tends to deprioritise content that does not generate immediate emotional engagement.</p>
+
+  <div class="callout blue">
+    <p>LinkedIn's own data indicates that its users have twice the buying power of the average web audience, and that 80% of B2B social media leads originate from the platform.</p>
+  </div>
+
+  <h3>Organic Reach and Content Longevity</h3>
+  <p>One of LinkedIn's most significant practical advantages is its organic reach. A well-crafted LinkedIn post from a personal profile can reach thousands of relevant professionals without any paid promotion. Instagram's organic reach, by contrast, has declined substantially in recent years as the platform has pushed creators and brands toward paid distribution.</p>
+
+  <p>LinkedIn content also tends to have greater longevity. A post that begins gaining traction can continue circulating for days or even weeks as it moves through professional networks via comments and shares. Instagram's algorithmic feed makes content highly time-sensitive.</p>
+
+  <h3>Content Formats That Perform on LinkedIn</h3>
+  <p>Understanding that LinkedIn rewards professional value is the starting point. The specific formats that consistently generate engagement include:</p>
+  <ul>
+    <li><strong>Long-form articles:</strong> Published directly on LinkedIn, these establish thought leadership and are indexed by search engines</li>
+    <li><strong>Document carousels:</strong> PDF-style carousel posts that teach a skill or share a framework consistently outperform standard text posts in terms of reach and saves</li>
+    <li><strong>Personal narrative posts:</strong> Decision-makers sharing honest accounts of professional challenges and lessons generate significant engagement and brand trust</li>
+    <li><strong>Data-led posts:</strong> Original research, case study results, and industry statistics perform well among professional audiences seeking credible information</li>
+  </ul>
+
+  <h3>When Instagram Remains Relevant for B2B</h3>
+  <p>This argument for LinkedIn does not mean B2B brands should abandon Instagram entirely. Instagram is a legitimate tool for employer branding, company culture content, and top-of-funnel awareness campaigns. It is also valuable in industries where visual demonstration of the product or service is important — architecture, interior design, and industrial manufacturing, for example.</p>
+
+  <p>The strategic recommendation is not either/or but rather a deliberate allocation of effort. For most B2B companies, LinkedIn should receive the majority of organic social investment, with Instagram serving a supporting role for specific content objectives.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>LinkedIn's professional-intent audience is structurally aligned with B2B purchasing decisions</li>
+      <li>Organic reach on LinkedIn remains strong — leverage it before paid amplification</li>
+      <li>Document carousels and thought leadership posts drive the highest engagement</li>
+      <li>Instagram serves B2B best in an employer branding and awareness capacity</li>
+      <li>Platform strategy should follow audience intent, not cultural popularity</li>
+    </ul>
+  </div>
+</article>
+
+<hr class="divider">
+
+<!-- ARTICLE 3 -->
+<article id="article3">
+  <div class="article-meta">
+    <span class="article-category strategy">Content Strategy</span>
+    <span class="article-read">8 min read</span>
+  </div>
+  <h2>How to Build a 90-Day Content Strategy from Scratch</h2>
+  <p class="article-subtitle">A structured, step-by-step framework for creating a content plan that aligns with business objectives, reaches the right audience, and produces measurable results.</p>
+
+  <p>Most content failures are not execution failures. Teams frequently produce well-written, visually appealing content that nevertheless generates little traffic, few leads, and no discernible business impact. The root cause is typically the absence of a coherent strategy — a documented plan that connects content output to audience needs and organisational goals.</p>
+
+  <p>A 90-day content strategy provides enough time to see meaningful results from initial efforts while remaining short enough to adapt as data comes in. The following framework applies to companies of any size and can be tailored to any industry.</p>
+
+  <h3>Phase 1: Foundation (Days 1–14)</h3>
+  <p>Before producing a single piece of content, invest time in the two activities that will determine whether everything else succeeds: audience definition and keyword research.</p>
+
+  <p><strong>Audience definition</strong> goes beyond demographics. For a content strategy to work, you need to understand the specific questions your target audience is asking, the problems they are trying to solve, and the language they use when searching for solutions. Interview existing customers, analyse support tickets and sales call notes, and review the questions your audience asks in online communities and forums relevant to your industry.</p>
+
+  <p><strong>Keyword research</strong> translates those audience insights into searchable terms. Use tools such as SEMrush, Ahrefs, or Google Keyword Planner to identify keywords with meaningful search volume and realistic ranking potential for your domain authority. At this stage, prioritise informational keywords — those indicating that a person is seeking to learn something — over transactional ones. Informational content builds trust and organic traffic; transactional keywords are better addressed once that foundation exists.</p>
+
+  <div class="callout green">
+    <p>A common mistake is targeting only high-volume keywords. For new or low-authority sites, long-tail keywords with 100–500 monthly searches and low competition will produce faster, more achievable results.</p>
+  </div>
+
+  <h3>Phase 2: Planning and Content Pillars (Days 15–21)</h3>
+  <p>Organise your keyword research into <strong>content pillars</strong> — broad topic areas that are central to your business and around which multiple pieces of content can be created. A digital marketing agency, for example, might establish pillars around SEO, social media marketing, paid advertising, and content strategy.</p>
+
+  <p>Each pillar should have a long-form "pillar page" — a comprehensive guide that covers the topic broadly — supported by more specific "cluster content" that addresses individual subtopics in greater depth. This topic cluster model helps search engines understand the depth of your expertise in a given area and improves internal linking structure.</p>
+
+  <p>Build your 90-day editorial calendar at this stage. Aim for consistency over volume. Two well-researched, properly optimised articles per week will outperform five hastily produced ones. Assign each piece a target keyword, content type, and publication date.</p>
+
+  <h3>Phase 3: Production and Publication (Days 22–75)</h3>
+  <p>During production, apply the following standards to every piece of content:</p>
+  <ul>
+    <li><strong>Search intent alignment:</strong> Every article must match the intent behind its target keyword. A "how-to" keyword demands instructional content; a "best [product]" keyword expects a comparison</li>
+    <li><strong>On-page SEO basics:</strong> Include the target keyword in the title tag, H1, first paragraph, at least one subheading, and meta description</li>
+    <li><strong>Readability:</strong> Use subheadings every 200–300 words, keep sentences under 25 words where possible, and include bullet points or numbered lists for scannable content</li>
+    <li><strong>Internal links:</strong> Link each new piece to at least two existing pieces of content on your site, and update existing content to link back to new pages where relevant</li>
+  </ul>
+
+  <h3>Phase 4: Analysis and Optimisation (Days 76–90)</h3>
+  <p>The final phase is where most strategies fail — teams produce content consistently but never review what is working. At the 90-day mark, pull data from Google Analytics 4 and Google Search Console to assess the following:</p>
+  <ul>
+    <li>Which articles are receiving the most organic traffic?</li>
+    <li>Which keywords are gaining impressions and clicks?</li>
+    <li>What is the average engagement time per page, and which pieces have unusually high or low engagement?</li>
+    <li>Are there any pages ranking on page two that could be promoted to page one with additional optimisation?</li>
+  </ul>
+
+  <p>Use this analysis to inform your next 90-day cycle. Update underperforming content rather than abandoning it — a piece that ranks on page two for a valuable keyword is often one targeted improvement away from a significant traffic increase.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>Define your audience before producing any content — strategy precedes execution</li>
+      <li>Prioritise long-tail keywords for faster ranking results on newer sites</li>
+      <li>Topic clusters improve both user experience and search engine authority signals</li>
+      <li>Consistency and quality matter more than publishing volume</li>
+      <li>Review analytics at 90 days and update content based on what the data reveals</li>
+    </ul>
+  </div>
+
+  <p>A 90-day content strategy is not a finished product — it is an iteration. The brands that build sustainable organic traffic are those that treat content as a compounding asset: each piece builds on the last, each cycle refines the approach, and each quarter of consistent effort produces results that compound over time.</p>
+</article>
+
+<footer>
+  Written by Kunkumalla Sravani &nbsp;·&nbsp; Digital Marketing Specialist, Hyderabad &nbsp;·&nbsp; <a href="mailto:kunkumallasravani89@gmail.com">kunkumallasravani89@gmail.com</a>
+</footer>
+
+</body>
+</html>
