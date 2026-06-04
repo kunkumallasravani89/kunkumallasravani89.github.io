@@ -3,866 +3,429 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kunkumalla Sravani — Digital Marketing Specialist</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Writing Samples — Kunkumalla Sravani</title>
 <style>
-  :root {
-    --black: #0a0a0a;
-    --white: #f5f2ee;
-    --accent: #e85d26;
-    --accent2: #f5a623;
-    --muted: #888;
-    --card-bg: #141414;
-    --border: rgba(255,255,255,0.08);
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap');
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: #1a1a1a;
+    background: #faf9f6;
   }
 
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 999;
-    opacity: 0.4;
+  header {
+    background: #1a1a1a;
+    color: #faf9f6;
+    padding: 3rem 2rem;
+    text-align: center;
   }
 
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left {
-    background: var(--accent);
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left::before {
-    content: 'DM';
-    position: absolute;
-    top: -40px;
-    left: -20px;
+  header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 280px;
-    font-weight: 900;
-    color: rgba(0,0,0,0.1);
-    line-height: 1;
-    pointer-events: none;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
   }
 
-  .hero-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 3px;
+  header p {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.55);
-    margin-bottom: 24px;
+    color: #a0a0a0;
+    font-weight: 300;
   }
 
-  .hero-name {
+  .toc {
+    max-width: 680px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+  }
+
+  .toc h2 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 900;
-    line-height: 0.95;
-    color: #0a0a0a;
-    margin-bottom: 32px;
-  }
-
-  .hero-name span { display: block; font-style: italic; font-weight: 400; }
-
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #0a0a0a;
-    color: var(--white);
-    padding: 16px 28px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-decoration: none;
-    width: fit-content;
-    transition: all 0.3s;
-  }
-
-  .hero-cta:hover { background: var(--white); color: #0a0a0a; }
-  .hero-cta .arrow { font-size: 18px; transition: transform 0.3s; }
-  .hero-cta:hover .arrow { transform: translateX(6px); }
-
-  .hero-right {
-    background: var(--black);
-    padding: 80px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .hero-nav { display: flex; justify-content: flex-end; gap: 32px; }
-
-  .hero-nav a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-  }
-
-  .hero-nav a:hover { color: var(--white); }
-
-  .hero-intro { padding-top: 80px; }
-
-  .hero-intro p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(245,242,238,0.75);
-    max-width: 420px;
-    margin-bottom: 48px;
-  }
-
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    border: 1px solid var(--border);
-  }
-
-  .stat { padding: 24px 20px; border-right: 1px solid var(--border); }
-  .stat:last-child { border-right: none; }
-
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 900;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
-
-  section { padding: 120px 80px; }
-
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 4px;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
+    color: #888;
+    margin-bottom: 1rem;
+    font-weight: 400;
   }
 
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(36px, 4vw, 56px);
-    font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 64px;
+  .toc-list {
+    list-style: none;
+    border-left: 2px solid #e0dcd4;
+    padding-left: 1.2rem;
   }
 
-  .about { background: var(--white); color: var(--black); }
-  .about .section-label { color: var(--accent); }
+  .toc-list li {
+    margin-bottom: 0.6rem;
+  }
 
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-
-  .about-text p { font-size: 17px; line-height: 1.8; color: #333; margin-bottom: 20px; }
-
-  .contact-links { display: flex; flex-direction: column; gap: 0; margin-top: 40px; }
-
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--black);
+  .toc-list a {
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 16px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    transition: color 0.3s;
+    color: #3a3a3a;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.2s;
   }
 
-  .contact-link:hover { color: var(--accent); }
+  .toc-list a:hover { color: #c0562a; }
 
-  .contact-link .icon {
-    width: 36px; height: 36px;
-    background: var(--black);
-    color: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; flex-shrink: 0;
+  .toc-list .tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-left: 0.5rem;
   }
 
-  .about-highlights { display: flex; flex-direction: column; gap: 2px; }
-
-  .highlight-item {
-    background: var(--black);
-    color: var(--white);
-    padding: 28px 32px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .divider {
+    max-width: 680px;
+    margin: 0 auto;
+    border: none;
+    border-top: 1px solid #e0dcd4;
   }
 
-  .highlight-item:nth-child(even) { background: var(--accent); color: var(--black); }
-
-  .highlight-text { font-size: 15px; font-weight: 500; }
-  .highlight-badge { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1px; opacity: 0.7; }
-
-  .skills { background: var(--black); }
-
-  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-
-  .skill-card {
-    background: var(--card-bg);
-    padding: 40px 36px;
-    border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s;
+  article {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
   }
 
-  .skill-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%; height: 3px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s;
-  }
-
-  .skill-card:hover::before { transform: scaleX(1); }
-  .skill-card:hover { border-color: rgba(232,93,38,0.3); }
-
-  .skill-icon { font-size: 28px; margin-bottom: 20px; }
-
-  .skill-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; }
-
-  .skill-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
-
-  .skill-tools { display: flex; flex-wrap: wrap; gap: 6px; }
-
-  .tool-tag {
-    background: rgba(232,93,38,0.12);
-    color: var(--accent);
-    padding: 4px 10px;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(232,93,38,0.2);
-  }
-
-  .projects { background: #0f0f0f; }
-
-  .projects-list { display: flex; flex-direction: column; gap: 2px; }
-
-  .project-item {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 48px 56px;
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 40px;
-    align-items: start;
-    transition: all 0.4s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .project-item::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0;
-    width: 4px; height: 100%;
-    background: var(--accent);
-    transform: scaleY(0);
-    transition: transform 0.4s;
-  }
-
-  .project-item:hover::after { transform: scaleY(1); }
-  .project-item:hover { border-color: rgba(232,93,38,0.2); }
-
-  .project-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    font-weight: 900;
-    color: rgba(255,255,255,0.06);
-    line-height: 1;
-    padding-top: 4px;
-  }
-
-  .project-header {
+  .article-meta {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 12px;
   }
 
-  .project-tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--accent);
+  .article-category {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-  }
-
-  .project-type-badge {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 3px 8px;
+    color: #fff;
+    background: #c0562a;
+    padding: 3px 10px;
     border-radius: 2px;
-    font-weight: 500;
+    font-weight: 400;
   }
 
-  .badge-practice {
-    background: rgba(245, 166, 35, 0.15);
-    color: #f5a623;
-    border: 1px solid rgba(245, 166, 35, 0.3);
+  .article-category.social { background: #2a6ec0; }
+  .article-category.strategy { background: #2a9c5a; }
+
+  .article-read {
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 0.05em;
   }
 
-  .badge-training {
-    background: rgba(99, 179, 237, 0.15);
-    color: #63b3ed;
-    border: 1px solid rgba(99, 179, 237, 0.3);
-  }
-
-  .badge-selfstarted {
-    background: rgba(154, 230, 180, 0.15);
-    color: #68d391;
-    border: 1px solid rgba(154, 230, 180, 0.3);
-  }
-
-  .badge-probono {
-    background: rgba(183, 148, 244, 0.15);
-    color: #b794f4;
-    border: 1px solid rgba(183, 148, 244, 0.3);
-  }
-
-  .project-title {
+  article h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.2;
-  }
-
-  .project-desc {
-    font-size: 14px;
-    color: rgba(245,242,238,0.6);
-    line-height: 1.7;
-    margin-bottom: 24px;
-    max-width: 580px;
-  }
-
-  .project-results { display: flex; flex-wrap: wrap; gap: 10px; }
-
-  .result-badge {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    font-size: 12px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .result-badge .dot {
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .project-tools-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 140px;
-    padding-top: 44px;
-  }
-
-  .project-tool {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    text-align: right;
-    letter-spacing: 0.5px;
-  }
-
-  .learning { background: var(--white); color: var(--black); }
-  .learning .section-label { color: var(--accent); }
-  .learning .section-title { color: var(--black); }
-
-  .learning-list { display: flex; flex-direction: column; }
-
-  .learning-item {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 60px;
-    padding: 48px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    align-items: start;
-  }
-
-  .learning-period {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 1px;
-    padding-top: 4px;
-    line-height: 1.6;
-  }
-
-  .learning-role { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-
-  .learning-org {
-    font-size: 13px;
-    color: var(--accent);
+    font-size: 1.85rem;
     font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #111;
+    margin-bottom: 0.6rem;
   }
 
-  .learning-desc { font-size: 14px; color: #444; line-height: 1.6; margin-bottom: 16px; font-style: italic; }
+  .article-subtitle {
+    font-size: 1.05rem;
+    color: #666;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e0dcd4;
+  }
 
-  .learning-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  article p {
+    margin-bottom: 1.3rem;
+    color: #2c2c2c;
+  }
 
-  .learning-bullets li {
-    font-size: 14px;
+  article h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111;
+    margin: 2rem 0 0.6rem;
+  }
+
+  article ul, article ol {
+    padding-left: 1.4rem;
+    margin-bottom: 1.3rem;
+  }
+
+  article li {
+    margin-bottom: 0.5rem;
+    color: #2c2c2c;
+  }
+
+  .callout {
+    background: #f0ede6;
+    border-left: 3px solid #c0562a;
+    padding: 1rem 1.2rem;
+    margin: 1.8rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout.blue { border-left-color: #2a6ec0; background: #edf2fa; }
+  .callout.green { border-left-color: #2a9c5a; background: #edf7f1; }
+
+  .callout p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-style: italic;
     color: #444;
-    line-height: 1.6;
-    padding-left: 20px;
-    position: relative;
   }
 
-  .learning-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
-
-  .certifications { background: var(--black); }
-
-  .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-
-  .cert-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    padding: 40px 36px;
-    transition: all 0.3s;
-    position: relative;
+  strong {
+    font-weight: 600;
+    color: #111;
   }
 
-  .cert-card:hover { border-color: rgba(232,93,38,0.4); background: rgba(232,93,38,0.05); }
+  .key-takeaways {
+    background: #1a1a1a;
+    color: #faf9f6;
+    padding: 1.5rem 1.8rem;
+    border-radius: 4px;
+    margin: 2rem 0;
+  }
 
-  .cert-year { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--accent); letter-spacing: 2px; margin-bottom: 16px; }
+  .key-takeaways h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+  }
 
-  .cert-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; }
+  .key-takeaways ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
 
-  .cert-issuer { font-size: 13px; color: var(--muted); }
-
-  .cert-icon { position: absolute; top: 32px; right: 32px; font-size: 24px; opacity: 0.4; }
-
-  .education { background: var(--accent); color: var(--black); }
-  .education .section-label { color: rgba(0,0,0,0.5); }
-
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-
-  .edu-card { background: rgba(0,0,0,0.08); padding: 48px 40px; }
-
-  .edu-degree { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
-
-  .edu-inst { font-size: 14px; font-weight: 600; margin-bottom: 8px; opacity: 0.7; }
-  .edu-year { font-family: 'DM Mono', monospace; font-size: 12px; opacity: 0.5; letter-spacing: 1px; }
+  .key-takeaways li {
+    color: #e0dcd4;
+    font-size: 0.92rem;
+    margin-bottom: 0.4rem;
+  }
 
   footer {
-    background: var(--black);
-    padding: 80px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    font-size: 0.8rem;
+    color: #aaa;
+    letter-spacing: 0.08em;
+    border-top: 1px solid #e0dcd4;
+    margin-top: 2rem;
   }
 
-  .footer-name { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; line-height: 1; margin-bottom: 12px; }
-  .footer-name span { color: var(--accent); }
-  .footer-tagline { font-size: 14px; color: var(--muted); letter-spacing: 1px; }
-  .footer-contact { text-align: right; }
-
-  .footer-email {
-    font-size: 16px;
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-    transition: color 0.3s;
-  }
-
-  .footer-email:hover { color: var(--accent); }
-  .footer-location { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 1px; }
-
-  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { min-height: 60vh; padding: 60px 40px; }
-    .hero-right { padding: 60px 40px; }
-    .about-grid, .skills-grid, .certs-grid, .edu-grid { grid-template-columns: 1fr; }
-    .project-item { grid-template-columns: 1fr; }
-    .project-tools-col { flex-direction: row; flex-wrap: wrap; padding-top: 0; }
-    .project-tool { text-align: left; }
-    section { padding: 80px 32px; }
-    footer { grid-template-columns: 1fr; gap: 32px; }
-    .footer-contact { text-align: left; }
-    .learning-item { grid-template-columns: 1fr; gap: 16px; }
-    .stats-row { grid-template-columns: 1fr; }
-    .stat { border-right: none; border-bottom: 1px solid var(--border); }
-  }
+  footer a { color: #c0562a; text-decoration: none; }
 </style>
 </head>
 <body>
 
-<section class="hero" id="home">
-  <div class="hero-left">
-    <p class="hero-tag">Digital Marketing Specialist</p>
-    <h1 class="hero-name">Kunkumalla<span>Sravani.</span></h1>
-    <a href="mailto:kunkumallasravani89@gmail.com" class="hero-cta">Get In Touch <span class="arrow">→</span></a>
+<header>
+  <h1>Kunkumalla Sravani</h1>
+  <p>Writing Samples &nbsp;·&nbsp; SEO Content &nbsp;·&nbsp; Digital Marketing</p>
+</header>
+
+<div class="toc" style="margin-top:2.5rem;">
+  <h2>Contents</h2>
+  <ul class="toc-list">
+    <li><a href="#article1">Technical SEO Checklist for 2026</a> <span class="tag">SEO</span></li>
+    <li><a href="#article2">Why LinkedIn Outperforms Instagram for B2B Brands</a> <span class="tag">Social Media</span></li>
+    <li><a href="#article3">How to Build a 90-Day Content Strategy from Scratch</a> <span class="tag">Content Strategy</span></li>
+  </ul>
+</div>
+
+<hr class="divider">
+
+<!-- ARTICLE 1 -->
+<article id="article1">
+  <div class="article-meta">
+    <span class="article-category">SEO</span>
+    <span class="article-read">7 min read</span>
   </div>
-  <div class="hero-right">
-    <nav class="hero-nav">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#learning">Learning</a>
-    </nav>
-    <div class="hero-intro">
-      <p>Skilled Digital Marketer with a strong foundation in SEO, Google Ads, Social Media Management, and AI-powered content creation. 7 real projects with measurable results. Based in Hyderabad.</p>
-      <div class="stats-row">
-        <div class="stat"><div class="stat-num">7</div><div class="stat-label">Portfolio Projects</div></div>
-        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Core Skills</div></div>
-        <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Certifications</div></div>
-      </div>
-    </div>
+  <h2>The Technical SEO Checklist Every Website Needs in 2026</h2>
+  <p class="article-subtitle">Search engine algorithms have grown increasingly sophisticated. Here is what your technical foundation must look like to compete in today's organic landscape.</p>
+
+  <p>Most content teams invest considerable effort in crafting well-researched, well-written articles — and then wonder why those articles never rank. The answer, more often than not, lies not in the content itself but in the technical infrastructure that supports it. Search engines cannot effectively index or reward content that sits on a poorly optimised website.</p>
+
+  <p>Technical SEO refers to the set of optimisations made to a website's architecture, performance, and crawlability that allow search engines to access, understand, and rank its pages accurately. Unlike on-page SEO — which focuses on content quality and keyword usage — technical SEO operates largely behind the scenes.</p>
+
+  <p>This checklist covers the foundational technical elements that every website, regardless of size or industry, must address in 2025.</p>
+
+  <h3>1. Core Web Vitals: Google's Performance Benchmark</h3>
+  <p>Google officially uses Core Web Vitals as a ranking signal, which means page experience is now a measurable factor in your organic position. The three metrics to monitor are <strong>Largest Contentful Paint (LCP)</strong>, which measures loading speed; <strong>Interaction to Next Paint (INP)</strong>, which replaced First Input Delay and evaluates responsiveness; and <strong>Cumulative Layout Shift (CLS)</strong>, which tracks visual stability.</p>
+
+  <p>A passing score on all three does not guarantee top rankings, but a failing score will actively suppress them. Use Google Search Console and PageSpeed Insights to audit your scores regularly.</p>
+
+  <div class="callout">
+    <p>Target benchmarks: LCP under 2.5 seconds, INP under 200 milliseconds, and CLS below 0.1. Pages meeting all three thresholds are considered "good" by Google standards.</p>
   </div>
-</section>
 
-<section class="about" id="about">
-  <p class="section-label">01 — About Me</p>
-  <h2 class="section-title">Who I Am</h2>
-  <div class="about-grid">
-    <div class="about-text fade-in">
-      <p>I'm a Digital Marketer from Hyderabad with a passion for SEO, social media strategy, and data-driven marketing. I completed professional training at Digital Medha & Advertising and have built 7 portfolio projects that demonstrate real, hands-on skills.</p>
-      <p>My journey into marketing started from an unconventional place — I hold a B.Tech in Electrical Engineering. That background taught me structured thinking and analytical problem-solving, which I now apply directly to keyword research, campaign analysis, and performance reporting. I made a deliberate decision to pivot into digital marketing because it's where I genuinely want to build my career.</p>
-      <p>I work with tools like SEMrush, Google Analytics 4, Canva, and ChatGPT to design campaigns that deliver measurable results. I'm actively seeking my first full-time or internship role where I can contribute to a team, keep learning, and grow fast.</p>
-      <div class="contact-links">
-        <a href="mailto:kunkumallasravani89@gmail.com" class="contact-link"><span class="icon">✉</span>kunkumallasravani89@gmail.com</a>
-        <a href="https://www.linkedin.com/in/kunkumalla-sravanii-1a1a62186" class="contact-link" target="_blank"><span class="icon">in</span>linkedin.com/in/kunkumalla-sravanii</a>
-      </div>
-    </div>
-    <div class="about-highlights fade-in">
-      <div class="highlight-item"><span class="highlight-text">SEO & Keyword Research</span><span class="highlight-badge">Proficient</span></div>
-      <div class="highlight-item"><span class="highlight-text">Google Analytics 4</span><span class="highlight-badge">Certified</span></div>
-      <div class="highlight-item"><span class="highlight-text">Social Media Strategy</span><span class="highlight-badge">Hands-on</span></div>
-      <div class="highlight-item"><span class="highlight-text">AI-Powered Content</span><span class="highlight-badge">Expert</span></div>
-      <div class="highlight-item"><span class="highlight-text">Canva Design</span><span class="highlight-badge">20+ Creatives</span></div>
-      <div class="highlight-item"><span class="highlight-text">Google Ads & PPC</span><span class="highlight-badge">Certified</span></div>
-    </div>
+  <h3>2. Mobile-First Indexing Is No Longer Optional</h3>
+  <p>Google indexes the mobile version of your website first. If your desktop site contains content, structured data, or internal links that your mobile version does not, those elements are effectively invisible to the crawler. Ensure that your mobile and desktop versions contain identical content and that your site uses responsive design rather than a separate mobile URL structure.</p>
+
+  <h3>3. HTTPS and Site Security</h3>
+  <p>A site operating on HTTP rather than HTTPS is penalised in rankings and flagged as "Not Secure" in most major browsers. If your SSL certificate has lapsed or was never installed, this must be addressed immediately. Beyond the ranking benefit, HTTPS is a basic trust signal for users — particularly relevant for e-commerce and lead generation pages.</p>
+
+  <h3>4. Crawl Budget and Internal Linking</h3>
+  <p>Search engine bots allocate a finite number of crawl requests to each website. Wasting this budget on duplicate pages, broken links, or redirect chains means that valuable content may go undiscovered. Conduct a crawl audit using tools such as Screaming Frog or SEMrush to identify and resolve these issues. A clean, logical internal linking structure also helps distribute page authority across your site and guides users to related content.</p>
+
+  <h3>5. Structured Data and Schema Markup</h3>
+  <p>Schema markup communicates explicitly to search engines what your content is about. Implementing the correct schema type — whether Article, Product, FAQ, or LocalBusiness — improves the likelihood of earning rich results in search, which command significantly higher click-through rates than standard listings.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>Core Web Vitals are a confirmed ranking factor — audit them monthly</li>
+      <li>Ensure mobile and desktop versions contain identical content</li>
+      <li>HTTPS is non-negotiable for trust and rankings</li>
+      <li>Crawl audits should be conducted quarterly to catch issues early</li>
+      <li>Schema markup increases click-through rates from search results</li>
+    </ul>
   </div>
-</section>
 
-<section class="skills" id="skills">
-  <p class="section-label">02 — What I Do</p>
-  <h2 class="section-title">Core Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card fade-in"><div class="skill-icon">🔍</div><div class="skill-name">SEO</div><div class="skill-desc">On-page optimization, keyword research, content strategy, and technical SEO to improve organic visibility and rankings.</div><div class="skill-tools"><span class="tool-tag">SEMrush</span><span class="tool-tag">GSC</span><span class="tool-tag">WordPress</span></div></div>
-    <div class="skill-card fade-in"><div class="skill-icon">📢</div><div class="skill-name">Google Ads</div><div class="skill-desc">Search and display campaign setup, PPC bidding strategies, ad copywriting, and performance analysis.</div><div class="skill-tools"><span class="tool-tag">Google Ads</span><span class="tool-tag">Keyword Planner</span></div></div>
-    <div class="skill-card fade-in"><div class="skill-icon">📱</div><div class="skill-name">Social Media</div><div class="skill-desc">Content calendars, organic growth strategies, hashtag research, audience engagement, and performance tracking.</div><div class="skill-tools"><span class="tool-tag">Instagram</span><span class="tool-tag">Facebook</span><span class="tool-tag">Meta Suite</span></div></div>
-    <div class="skill-card fade-in"><div class="skill-icon">📊</div><div class="skill-name">Web Analytics</div><div class="skill-desc">Traffic analysis, campaign tracking, audience insights, and monthly performance reporting for clients.</div><div class="skill-tools"><span class="tool-tag">GA4</span><span class="tool-tag">GSC</span><span class="tool-tag">SEMrush</span></div></div>
-    <div class="skill-card fade-in"><div class="skill-icon">🎨</div><div class="skill-name">Graphic Design</div><div class="skill-desc">Social media creatives, ad banners, post visuals, and branded content with consistent visual identity across platforms.</div><div class="skill-tools"><span class="tool-tag">Canva</span><span class="tool-tag">Canva AI</span></div></div>
-    <div class="skill-card fade-in"><div class="skill-icon">🤖</div><div class="skill-name">AI Tools</div><div class="skill-desc">AI-powered content creation, ad copy generation, and SEO optimization — reducing content production time by 40%.</div><div class="skill-tools"><span class="tool-tag">ChatGPT</span><span class="tool-tag">AI SEO Tools</span><span class="tool-tag">Canva AI</span></div></div>
+  <p>Technical SEO is not a one-time project. Websites evolve, algorithms update, and new issues emerge with every content addition or site change. Establishing a routine audit cadence — monthly for Core Web Vitals, quarterly for full crawl analysis — ensures that your technical foundation consistently supports the content your team works hard to produce.</p>
+</article>
+
+<hr class="divider">
+
+<!-- ARTICLE 2 -->
+<article id="article2">
+  <div class="article-meta">
+    <span class="article-category social">Social Media</span>
+    <span class="article-read">6 min read</span>
   </div>
-</section>
+  <h2>Why LinkedIn Consistently Outperforms Instagram for B2B Brands — And What to Do About It</h2>
+  <p class="article-subtitle">Platform selection is a strategic decision. For business-to-business companies, the data makes a compelling case for prioritising LinkedIn over more visually-driven alternatives.</p>
 
-<section class="projects" id="projects">
-  <p class="section-label">03 — My Work</p>
-  <h2 class="section-title">Projects & Case Studies</h2>
-  <div class="projects-list">
+  <p>In digital marketing conversations, Instagram tends to receive disproportionate attention. It is visually compelling, its advertising tools are sophisticated, and its user base is vast. For consumer-facing brands, this attention is well-founded. For B2B companies, however, the instinct to follow Instagram's cultural momentum can lead to misallocated budgets and disappointing results.</p>
 
-    <!-- PROJECT 01 -->
-    <div class="project-item fade-in">
-      <div class="project-num">01</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">SEO & Content Marketing</p>
-          <span class="project-type-badge badge-practice">Practice Project</span>
-        </div>
-        <h3 class="project-title">Digital Marketing SEO Project</h3>
-        <p class="project-desc">Conducted end-to-end keyword research and on-page SEO optimization. Created and published SEO-optimized blog content, monitored performance via Google Analytics, and used AI tools to accelerate content production by 40%.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>30% Keyword Coverage Improvement</span>
-          <span class="result-badge"><span class="dot"></span>AI-Accelerated Content Production</span>
-          <span class="result-badge"><span class="dot"></span>Traffic Monitored via GA4</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="SEO_Project_Report_2026.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#e85d26; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📈 View SEO Report</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">SEMrush</span>
-        <span class="project-tool">Google Analytics</span>
-        <span class="project-tool">ChatGPT</span>
-        <span class="project-tool">WordPress</span>
-      </div>
-    </div>
+  <p>The distinction is not that Instagram is ineffective — it is that LinkedIn is structurally better suited to the B2B purchase journey, and the evidence for this is consistent across industries and company sizes.</p>
 
-    <!-- PROJECT 02 -->
-    <div class="project-item fade-in">
-      <div class="project-num">02</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">Social Media Management</p>
-          <span class="project-type-badge badge-practice">Practice Project</span>
-        </div>
-        <h3 class="project-title">Instagram & Facebook Growth — Social Media Pages</h3>
-        <p class="project-desc">Managed Instagram and Facebook content calendars as part of hands-on training. Designed branded creatives using Canva, maintained consistent visual identity, and implemented a structured weekly posting strategy to drive organic growth.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>30% Engagement Growth</span>
-          <span class="result-badge"><span class="dot"></span>20+ Branded Creatives Designed</span>
-          <span class="result-badge"><span class="dot"></span>2+ Pages Managed</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="Social_Media_Performance_Report_2026.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#7C3AED; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📱 View Social Media Report</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">Instagram</span>
-        <span class="project-tool">Facebook</span>
-        <span class="project-tool">Canva</span>
-        <span class="project-tool">Meta Insights</span>
-      </div>
-    </div>
+  <h3>The Audience Composition Difference</h3>
+  <p>LinkedIn's user base is defined by professional intent. Its members log in to consume industry news, evaluate vendors, and advance their careers. This means that when a B2B brand publishes content on LinkedIn, it is reaching an audience that is already in a professional mindset — one that is receptive to content about business challenges, solutions, and industry developments.</p>
 
-    <!-- PROJECT 03 -->
-    <div class="project-item fade-in">
-      <div class="project-num">03</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">Personal Brand — Content Marketing</p>
-          <span class="project-type-badge badge-selfstarted">Self-Initiated</span>
-        </div>
-        <h3 class="project-title">Digital Marketing Instagram Page</h3>
-        <p class="project-desc">Built and manage a personal Instagram page focused on Digital Marketing tips, SEO strategies, and content marketing insights. Creating original posts, reels, and carousels while applying organic growth strategies and tracking performance metrics weekly.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>Original Posts, Reels & Carousels</span>
-          <span class="result-badge"><span class="dot"></span>Organic Hashtag Strategy</span>
-          <span class="result-badge"><span class="dot"></span>Weekly Insights Tracking</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="Aaira_Digitals_CaseStudy_Final.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#a855f7; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📊 View Case Study</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">Instagram</span>
-        <span class="project-tool">Canva</span>
-        <span class="project-tool">Meta Insights</span>
-      </div>
-    </div>
+  <p>Instagram's audience, while enormous, is in a predominantly leisure mindset. Users scroll for entertainment, social connection, and inspiration. B2B content does not naturally fit this context, and the platform's algorithm tends to deprioritise content that does not generate immediate emotional engagement.</p>
 
-    <!-- PROJECT 04 -->
-    <div class="project-item fade-in">
-      <div class="project-num">04</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">AI + Marketing</p>
-          <span class="project-type-badge badge-probono">Pro Bono Project</span>
-        </div>
-        <h3 class="project-title">AI-Assisted Content Strategy — Vyshnav Padband</h3>
-        <p class="project-desc">Built a complete 30-post Instagram content strategy for an event decoration brand using ChatGPT for ideation and Canva AI for copy refinement. Includes 5 content pillars, caption templates, hashtag bank, and a 4-week posting schedule — reducing content planning time by 70%.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>30 Posts Planned</span>
-          <span class="result-badge"><span class="dot"></span>5 Content Pillars</span>
-          <span class="result-badge"><span class="dot"></span>AI-Powered Strategy</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="Vyshnav_Padband_Content_Strategy_2026.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#a855f7; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📄 View Content Strategy</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">ChatGPT</span>
-        <span class="project-tool">Canva AI</span>
-        <span class="project-tool">Instagram</span>
-        <span class="project-tool">Content Strategy</span>
-      </div>
-    </div>
-
-    <!-- PROJECT 05 -->
-    <div class="project-item fade-in">
-      <div class="project-num">05</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">Analytics & Data</p>
-          <span class="project-type-badge badge-training">Training Project</span>
-        </div>
-        <h3 class="project-title">GA4 Monthly Performance Report — Google Merchandise Store</h3>
-        <p class="project-desc">Analysed 28 days of real traffic data from the Google Analytics 4 Demo Account. Built a full monthly performance report covering traffic acquisition, engagement metrics, top pages, and revenue — with actionable insights and recommendations based on data.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>98,941 Sessions Analysed</span>
-          <span class="result-badge"><span class="dot"></span>$166K Revenue Tracked</span>
-          <span class="result-badge"><span class="dot"></span>6 Data-Driven Recommendations</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="GA4_Monthly_Performance_Report_2026.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#e85d26; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📊 View Analytics Report</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">Google Analytics 4</span>
-        <span class="project-tool">GA4 Demo Account</span>
-        <span class="project-tool">Data Analysis</span>
-        <span class="project-tool">Reporting</span>
-      </div>
-    </div>
-
-    <!-- PROJECT 06 -->
-    <div class="project-item fade-in">
-      <div class="project-num">06</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">SEO Audit & Competitive Analysis</p>
-          <span class="project-type-badge badge-practice">Practice Project</span>
-        </div>
-        <h3 class="project-title">SEO Competitor Audit Report — Hyderabad Restaurant Niche</h3>
-        <p class="project-desc">Conducted a full SEO competitive audit comparing three Hyderabad restaurant brands — Paradise Biryani, Bawarchi, and Cafe Bahar. Covered technical SEO, on-page analysis, keyword gap identification, backlink profiling, and traffic trends. Delivered a client-ready report with 7 priority recommendations including schema markup, SSL fixes, citation building, and location-specific landing pages.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>3 Businesses Audited</span>
-          <span class="result-badge"><span class="dot"></span>8 Keyword Gap Opportunities Identified</span>
-          <span class="result-badge"><span class="dot"></span>7 Priority Recommendations</span>
-          <span class="result-badge"><span class="dot"></span>Technical + On-Page + Off-Page Coverage</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="SEO_Competitor_Audit_Hyderabad.pdf" target="_blank" style="display:inline-block; padding:8px 20px; background:#185FA5; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">📋 View Audit Report</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">SEMrush</span>
-        <span class="project-tool">Google PageSpeed</span>
-        <span class="project-tool">Ahrefs</span>
-        <span class="project-tool">GSC</span>
-      </div>
-    </div>
-
-    <!-- PROJECT 07 -->
-    <div class="project-item fade-in">
-      <div class="project-num">07</div>
-      <div class="project-content">
-        <div class="project-header">
-          <p class="project-tag">Content Writing</p>
-          <span class="project-type-badge badge-selfstarted">Self-Initiated</span>
-        </div>
-        <h3 class="project-title">Content Writing Portfolio — SEO, Social Media & Strategy</h3>
-        <p class="project-desc">3 original long-form articles written to demonstrate blog copywriting, digital marketing knowledge, and content strategy skills. Topics cover on-page SEO best practices, Instagram growth tactics, and building an effective content calendar — written in a professional editorial style.</p>
-        <div class="project-results">
-          <span class="result-badge"><span class="dot"></span>3 Original Articles</span>
-          <span class="result-badge"><span class="dot"></span>3 Topic Areas Covered</span>
-          <span class="result-badge"><span class="dot"></span>Long-Form Blog Style</span>
-          <span class="result-badge"><span class="dot"></span>SEO + Social + Strategy</span>
-        </div>
-        <div style="margin-top:16px;">
-          <a href="sravani_writing_samples.html" target="_blank" style="display:inline-block; padding:8px 20px; background:#2e7d52; color:#fff; border-radius:6px; text-decoration:none; font-weight:bold; font-size:13px;">✍️ View Writing Samples</a>
-        </div>
-      </div>
-      <div class="project-tools-col">
-        <span class="project-tool">Blog Copywriting</span>
-        <span class="project-tool">SEO Writing</span>
-        <span class="project-tool">Content Strategy</span>
-        <span class="project-tool">Editorial Style</span>
-      </div>
-    </div>
-
+  <div class="callout blue">
+    <p>LinkedIn's own data indicates that its users have twice the buying power of the average web audience, and that 80% of B2B social media leads originate from the platform.</p>
   </div>
-</section>
 
-<section class="learning" id="learning">
-  <p class="section-label">04 — Training & Foundation</p>
-  <h2 class="section-title">Professional Learning</h2>
-  <div class="learning-list">
-    <div class="learning-item fade-in">
-      <div class="learning-period">Dec 2024 — May 2025<br>Hyderabad</div>
-      <div>
-        <h3 class="learning-role">Digital Marketing Training Program</h3>
-        <p class="learning-org">Digital Medha & Advertising</p>
-        <p class="learning-desc">Intensive professional training covering SEO, Social Media Marketing, Google Ads, Content Strategy, and AI-driven marketing tools. Hands-on projects with real-world scenarios and analytics reporting.</p>
-        <ul class="learning-bullets">
-          <li>Conducted keyword research and on-page SEO optimization for sample websites</li>
-          <li>Created and managed social media content calendars for Instagram & Facebook</li>
-          <li>Designed 10+ ad creatives and post visuals using Canva</li>
-          <li>Analyzed website traffic and campaign performance using Google Analytics 4</li>
-          <li>Learned AI tools (ChatGPT, AI SEO tools) for content generation and optimization</li>
-          <li>Completed real-world project assignments showcasing practical skills</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+  <h3>Organic Reach and Content Longevity</h3>
+  <p>One of LinkedIn's most significant practical advantages is its organic reach. A well-crafted LinkedIn post from a personal profile can reach thousands of relevant professionals without any paid promotion. Instagram's organic reach, by contrast, has declined substantially in recent years as the platform has pushed creators and brands toward paid distribution.</p>
 
-<section class="certifications">
-  <p class="section-label">05 — Credentials</p>
-  <h2 class="section-title">Certifications & Courses</h2>
-  <div class="certs-grid">
-    <div class="cert-card fade-in"><div class="cert-year">2024</div><div class="cert-title">Digital Marketing Training</div><div class="cert-issuer">Digital Medha & Advertising — SEO, Social Media, Google Ads & AI Strategies</div><div class="cert-icon">🎓</div></div>
-    <div class="cert-card fade-in"><div class="cert-year">2024</div><div class="cert-title">SEMrush SEO Fundamentals</div><div class="cert-issuer">SEMrush Academy — Keyword Research, Technical SEO & Site Audit</div><div class="cert-icon">📈</div></div>
-    <div class="cert-card fade-in"><div class="cert-year">2024</div><div class="cert-title">Google Ads Basics</div><div class="cert-issuer">Google — Campaign Setup, Ad Copywriting & Performance Analysis</div><div class="cert-icon">🎯</div></div>
-  </div>
-</section>
+  <p>LinkedIn content also tends to have greater longevity. A post that begins gaining traction can continue circulating for days or even weeks as it moves through professional networks via comments and shares. Instagram's algorithmic feed makes content highly time-sensitive.</p>
 
-<section class="education">
-  <p class="section-label">06 — Academic Background</p>
-  <h2 class="section-title">Education</h2>
-  <div class="edu-grid">
-    <div class="edu-card fade-in"><div class="edu-degree">Bachelor of Technology — Electrical & Electronics Engineering</div><div class="edu-inst">Jyothishmathi Institute of Technology and Science</div><div class="edu-year">Jun 2019 — Aug 2022</div></div>
-    <div class="edu-card fade-in"><div class="edu-degree">Diploma — Electrical & Electronics Engineering</div><div class="edu-inst">SRRS Govt Polytechnic</div><div class="edu-year">Jun 2016 — May 2019</div></div>
+  <h3>Content Formats That Perform on LinkedIn</h3>
+  <p>Understanding that LinkedIn rewards professional value is the starting point. The specific formats that consistently generate engagement include:</p>
+  <ul>
+    <li><strong>Long-form articles:</strong> Published directly on LinkedIn, these establish thought leadership and are indexed by search engines</li>
+    <li><strong>Document carousels:</strong> PDF-style carousel posts that teach a skill or share a framework consistently outperform standard text posts in terms of reach and saves</li>
+    <li><strong>Personal narrative posts:</strong> Decision-makers sharing honest accounts of professional challenges and lessons generate significant engagement and brand trust</li>
+    <li><strong>Data-led posts:</strong> Original research, case study results, and industry statistics perform well among professional audiences seeking credible information</li>
+  </ul>
+
+  <h3>When Instagram Remains Relevant for B2B</h3>
+  <p>This argument for LinkedIn does not mean B2B brands should abandon Instagram entirely. Instagram is a legitimate tool for employer branding, company culture content, and top-of-funnel awareness campaigns. It is also valuable in industries where visual demonstration of the product or service is important — architecture, interior design, and industrial manufacturing, for example.</p>
+
+  <p>The strategic recommendation is not either/or but rather a deliberate allocation of effort. For most B2B companies, LinkedIn should receive the majority of organic social investment, with Instagram serving a supporting role for specific content objectives.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>LinkedIn's professional-intent audience is structurally aligned with B2B purchasing decisions</li>
+      <li>Organic reach on LinkedIn remains strong — leverage it before paid amplification</li>
+      <li>Document carousels and thought leadership posts drive the highest engagement</li>
+      <li>Instagram serves B2B best in an employer branding and awareness capacity</li>
+      <li>Platform strategy should follow audience intent, not cultural popularity</li>
+    </ul>
   </div>
-</section>
+</article>
+
+<hr class="divider">
+
+<!-- ARTICLE 3 -->
+<article id="article3">
+  <div class="article-meta">
+    <span class="article-category strategy">Content Strategy</span>
+    <span class="article-read">8 min read</span>
+  </div>
+  <h2>How to Build a 90-Day Content Strategy from Scratch</h2>
+  <p class="article-subtitle">A structured, step-by-step framework for creating a content plan that aligns with business objectives, reaches the right audience, and produces measurable results.</p>
+
+  <p>Most content failures are not execution failures. Teams frequently produce well-written, visually appealing content that nevertheless generates little traffic, few leads, and no discernible business impact. The root cause is typically the absence of a coherent strategy — a documented plan that connects content output to audience needs and organisational goals.</p>
+
+  <p>A 90-day content strategy provides enough time to see meaningful results from initial efforts while remaining short enough to adapt as data comes in. The following framework applies to companies of any size and can be tailored to any industry.</p>
+
+  <h3>Phase 1: Foundation (Days 1–14)</h3>
+  <p>Before producing a single piece of content, invest time in the two activities that will determine whether everything else succeeds: audience definition and keyword research.</p>
+
+  <p><strong>Audience definition</strong> goes beyond demographics. For a content strategy to work, you need to understand the specific questions your target audience is asking, the problems they are trying to solve, and the language they use when searching for solutions. Interview existing customers, analyse support tickets and sales call notes, and review the questions your audience asks in online communities and forums relevant to your industry.</p>
+
+  <p><strong>Keyword research</strong> translates those audience insights into searchable terms. Use tools such as SEMrush, Ahrefs, or Google Keyword Planner to identify keywords with meaningful search volume and realistic ranking potential for your domain authority. At this stage, prioritise informational keywords — those indicating that a person is seeking to learn something — over transactional ones. Informational content builds trust and organic traffic; transactional keywords are better addressed once that foundation exists.</p>
+
+  <div class="callout green">
+    <p>A common mistake is targeting only high-volume keywords. For new or low-authority sites, long-tail keywords with 100–500 monthly searches and low competition will produce faster, more achievable results.</p>
+  </div>
+
+  <h3>Phase 2: Planning and Content Pillars (Days 15–21)</h3>
+  <p>Organise your keyword research into <strong>content pillars</strong> — broad topic areas that are central to your business and around which multiple pieces of content can be created. A digital marketing agency, for example, might establish pillars around SEO, social media marketing, paid advertising, and content strategy.</p>
+
+  <p>Each pillar should have a long-form "pillar page" — a comprehensive guide that covers the topic broadly — supported by more specific "cluster content" that addresses individual subtopics in greater depth. This topic cluster model helps search engines understand the depth of your expertise in a given area and improves internal linking structure.</p>
+
+  <p>Build your 90-day editorial calendar at this stage. Aim for consistency over volume. Two well-researched, properly optimised articles per week will outperform five hastily produced ones. Assign each piece a target keyword, content type, and publication date.</p>
+
+  <h3>Phase 3: Production and Publication (Days 22–75)</h3>
+  <p>During production, apply the following standards to every piece of content:</p>
+  <ul>
+    <li><strong>Search intent alignment:</strong> Every article must match the intent behind its target keyword. A "how-to" keyword demands instructional content; a "best [product]" keyword expects a comparison</li>
+    <li><strong>On-page SEO basics:</strong> Include the target keyword in the title tag, H1, first paragraph, at least one subheading, and meta description</li>
+    <li><strong>Readability:</strong> Use subheadings every 200–300 words, keep sentences under 25 words where possible, and include bullet points or numbered lists for scannable content</li>
+    <li><strong>Internal links:</strong> Link each new piece to at least two existing pieces of content on your site, and update existing content to link back to new pages where relevant</li>
+  </ul>
+
+  <h3>Phase 4: Analysis and Optimisation (Days 76–90)</h3>
+  <p>The final phase is where most strategies fail — teams produce content consistently but never review what is working. At the 90-day mark, pull data from Google Analytics 4 and Google Search Console to assess the following:</p>
+  <ul>
+    <li>Which articles are receiving the most organic traffic?</li>
+    <li>Which keywords are gaining impressions and clicks?</li>
+    <li>What is the average engagement time per page, and which pieces have unusually high or low engagement?</li>
+    <li>Are there any pages ranking on page two that could be promoted to page one with additional optimisation?</li>
+  </ul>
+
+  <p>Use this analysis to inform your next 90-day cycle. Update underperforming content rather than abandoning it — a piece that ranks on page two for a valuable keyword is often one targeted improvement away from a significant traffic increase.</p>
+
+  <div class="key-takeaways">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>Define your audience before producing any content — strategy precedes execution</li>
+      <li>Prioritise long-tail keywords for faster ranking results on newer sites</li>
+      <li>Topic clusters improve both user experience and search engine authority signals</li>
+      <li>Consistency and quality matter more than publishing volume</li>
+      <li>Review analytics at 90 days and update content based on what the data reveals</li>
+    </ul>
+  </div>
+
+  <p>A 90-day content strategy is not a finished product — it is an iteration. The brands that build sustainable organic traffic are those that treat content as a compounding asset: each piece builds on the last, each cycle refines the approach, and each quarter of consistent effort produces results that compound over time.</p>
+</article>
 
 <footer>
-  <div>
-    <div class="footer-name">Kunkumalla <span>Sravani.</span></div>
-    <div class="footer-tagline">Digital Marketing Specialist — Hyderabad, India</div>
-  </div>
-  <div class="footer-contact">
-    <a href="mailto:kunkumallasravani89@gmail.com" class="footer-email">kunkumallasravani89@gmail.com</a>
-    <div class="footer-location">📍 Hyderabad, Telangana, India</div>
-  </div>
+  Written by Kunkumalla Sravani &nbsp;·&nbsp; Digital Marketing Specialist, Hyderabad &nbsp;·&nbsp; <a href="mailto:kunkumallasravani89@gmail.com">kunkumallasravani89@gmail.com</a>
 </footer>
 
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), 100);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
