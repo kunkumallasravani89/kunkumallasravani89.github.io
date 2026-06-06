@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Samples — Kunkumalla Sravani</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f2ee;
+    --accent: #e85d26;
+    --muted: #888;
+    --card-bg: #141414;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 999; opacity: 0.4;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 28px 80px; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(10px); z-index: 100;
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--white); text-decoration: none; }
+  .nav-brand span { color: var(--accent); }
+  .nav-back { display: flex; align-items: center; gap: 8px; color: var(--muted); text-decoration: none; font-size: 13px; letter-spacing: 1px; transition: color 0.3s; }
+  .nav-back:hover { color: var(--white); }
+
+  /* HEADER */
+  .page-header { padding: 90px 80px 60px; border-bottom: 1px solid var(--border); }
+  .page-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  .page-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 5vw, 72px); font-weight: 900; line-height: 0.95; margin-bottom: 20px; }
+  .page-title span { font-style: italic; font-weight: 400; color: rgba(245,242,238,0.45); display: block; }
+  .page-desc { font-size: 16px; color: rgba(245,242,238,0.6); max-width: 540px; line-height: 1.7; }
+
+  /* ARTICLE WRAPPER */
+  .articles-wrapper { padding: 0 80px 120px; }
+
+  /* ARTICLE CARD */
+  .article-card {
+    margin-top: 2px; background: var(--card-bg); border: 1px solid var(--border);
+    position: relative; overflow: hidden; transition: border-color 0.3s;
+  }
+  .article-card::after {
+    content: ''; position: absolute; left: 0; top: 0;
+    width: 4px; height: 100%; background: var(--accent);
+    transform: scaleY(0); transition: transform 0.35s;
+  }
+  .article-card:hover::after { transform: scaleY(1); }
+  .article-card:hover { border-color: rgba(232,93,38,0.25); }
+
+  .card-top { padding: 44px 52px 0; }
+  .card-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
+  .cat-tag {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent);
+    background: rgba(232,93,38,0.1); border: 1px solid rgba(232,93,38,0.2); padding: 4px 12px;
+  }
+  .read-time { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+  .article-num { font-family: 'Playfair Display', serif; font-size: 11px; color: rgba(255,255,255,0.15); letter-spacing: 2px; }
+
+  .card-title { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 12px; }
+  .card-subtitle { font-size: 15px; color: rgba(245,242,238,0.5); font-style: italic; line-height: 1.6; max-width: 680px; }
+
+  .card-toggle {
+    display: flex; align-items: center; gap: 10px; padding: 22px 52px 44px;
+    font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent); cursor: pointer; width: fit-content;
+  }
+  .toggle-arrow { font-size: 16px; transition: transform 0.35s; display: inline-block; }
+
+  /* ARTICLE FULL */
+  .article-body { display: none; border-top: 1px solid var(--border); padding: 64px 52px 72px; }
+  .article-body.open { display: block; }
+
+  .article-body p { font-size: 16.5px; line-height: 1.88; color: rgba(245,242,238,0.8); margin-bottom: 26px; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 27px; font-weight: 700; color: var(--white); margin: 52px 0 18px; line-height: 1.2; }
+  .article-body h3 { font-size: 17px; font-weight: 600; color: var(--white); margin: 32px 0 12px; }
+  .article-body strong { color: var(--white); font-weight: 600; }
+  .article-body em { font-style: italic; color: rgba(245,242,238,0.65); }
+  .article-body ul { padding-left: 0; list-style: none; margin: 24px 0; }
+  .article-body ul li { font-size: 16px; color: rgba(245,242,238,0.78); line-height: 1.7; padding: 10px 0 10px 22px; border-bottom: 1px solid var(--border); position: relative; }
+  .article-body ul li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 13px; top: 11px; }
+
+  /* CALLOUT */
+  .callout {
+    background: rgba(232,93,38,0.07); border: 1px solid rgba(232,93,38,0.2);
+    border-left: 4px solid var(--accent); padding: 26px 30px; margin: 38px 0; border-radius: 0 4px 4px 0;
+  }
+  .callout-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .callout p { font-size: 14.5px !important; color: rgba(245,242,238,0.85) !important; margin-bottom: 0 !important; line-height: 1.72 !important; }
+
+  /* STAT ROW */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin: 44px 0; border: 1px solid var(--border); }
+  .stat-box { background: #181818; padding: 30px 22px; text-align: center; border-right: 1px solid var(--border); }
+  .stat-box:last-child { border-right: none; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 900; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; line-height: 1.45; }
+
+  /* COMPARISON TABLE */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 40px 0; }
+  .compare-table th { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); padding: 16px 20px; background: #181818; border: 1px solid var(--border); text-align: left; }
+  .compare-table td { font-size: 14px; color: rgba(245,242,238,0.78); padding: 16px 20px; border: 1px solid var(--border); line-height: 1.55; vertical-align: top; }
+  .compare-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+  .compare-table .winner { color: #68d391; font-weight: 600; }
+
+  /* NUMBERED STEPS */
+  .steps { display: flex; flex-direction: column; gap: 2px; margin: 38px 0; }
+  .step { display: grid; grid-template-columns: 52px 1fr; gap: 22px; background: #181818; border: 1px solid var(--border); padding: 26px 30px; align-items: start; transition: border-color 0.3s; }
+  .step:hover { border-color: rgba(232,93,38,0.25); }
+  .step-n { font-family: 'Playfair Display', serif; font-size: 34px; font-weight: 900; color: rgba(232,93,38,0.28); line-height: 1; }
+  .step-body h3 { font-size: 16px; font-weight: 600; color: var(--white); margin: 0 0 8px; }
+  .step-body p { font-size: 13.5px !important; color: rgba(245,242,238,0.62) !important; line-height: 1.68 !important; margin: 0 !important; }
+
+  /* DIVIDER */
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 50px 0; }
+
+  /* BYLINE */
+  .byline { display: flex; align-items: center; gap: 18px; padding: 30px 34px; background: #181818; border: 1px solid var(--border); margin-top: 60px; }
+  .byline-avatar { width: 48px; height: 48px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--black); flex-shrink: 0; }
+  .byline-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .byline-role { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 1px; }
+
+  /* FADE */
+  .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    .nav { padding: 20px 24px; }
+    .page-header { padding: 56px 24px 40px; }
+    .articles-wrapper { padding: 0 24px 80px; }
+    .card-top { padding: 32px 24px 0; }
+    .card-toggle { padding: 18px 24px 32px; }
+    .article-body { padding: 40px 24px 56px; }
+    .stat-row { grid-template-columns: 1fr; }
+    .stat-box { border-right: none; border-bottom: 1px solid var(--border); }
+    .step { grid-template-columns: 1fr; gap: 10px; }
+    .compare-table { display: block; overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Kunkumalla <span>Sravani.</span></a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<header class="page-header fade-in">
+  <p class="page-tag">Writing Portfolio</p>
+  <h1 class="page-title">New Articles <span>3 Fresh Pieces</span></h1>
+  <p class="page-desc">Three original articles covering personal branding, content engagement, and content strategy — written in a professional editorial style.</p>
+</header>
+
+<div class="articles-wrapper">
+
+  <!-- ============================================================ -->
+  <!-- ARTICLE 1: LinkedIn vs Instagram for Personal Branding       -->
+  <!-- ============================================================ -->
+  <div class="article-card fade-in">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="cat-tag">Social Media</span>
+        <span class="read-time">6 min read</span>
+        <span class="article-num">ARTICLE 01 / 03</span>
+      </div>
+      <h2 class="card-title">LinkedIn vs Instagram for Personal Branding — Which Should You Focus On?</h2>
+      <p class="card-subtitle">Both platforms promise visibility. But they reward very different kinds of people — and very different kinds of content.</p>
+    </div>
+    <div class="card-toggle" onclick="toggleArticle('art1', this)">
+      <span class="toggle-label">Read Article</span>
+      <span class="toggle-arrow">↓</span>
+    </div>
+    <div class="article-body" id="art1">
+
+      <p>If you've been trying to build a personal brand online, you've almost certainly heard two conflicting pieces of advice: "You need to be on LinkedIn" and "Instagram is where the audience is." Both are true — and that's exactly why most people end up half-committed to both platforms and winning on neither.</p>
+
+      <p>The question isn't which platform is better. The question is <strong>which platform is better for you</strong>, your industry, and the specific goals you're trying to achieve. Here's a clear breakdown to help you decide.</p>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">1B+</div><div class="stat-label">LinkedIn monthly active users globally</div></div>
+        <div class="stat-box"><div class="stat-num">2B+</div><div class="stat-label">Instagram monthly active users globally</div></div>
+        <div class="stat-box"><div class="stat-num">362M+</div><div class="stat-label">Instagram users in India alone</div></div>
+      </div>
+
+      <h2>The Fundamental Difference</h2>
+
+      <p>LinkedIn is a <strong>professional network</strong> — people go there with a work mindset. They're reading to learn, evaluating expertise, and making professional decisions. A post about a career lesson, an industry insight, or a business mistake resonates deeply because it speaks to why they logged in.</p>
+
+      <p>Instagram is a <strong>discovery and entertainment platform</strong> — people scroll to be inspired, entertained, or to shop. A personal brand post that would land flat on LinkedIn (a visual transformation, a lifestyle shot, a behind-the-scenes Reel) can go viral on Instagram because it fits the platform's emotional register.</p>
+
+      <h2>Side-by-Side Comparison</h2>
+
+      <table class="compare-table">
+        <tr>
+          <th>Factor</th>
+          <th>LinkedIn</th>
+          <th>Instagram</th>
+        </tr>
+        <tr>
+          <td><strong>Best for</strong></td>
+          <td>B2B, job seekers, consultants, coaches, corporate professionals</td>
+          <td>B2C, creators, lifestyle brands, freelancers, local businesses</td>
+        </tr>
+        <tr>
+          <td><strong>Content that wins</strong></td>
+          <td>Career stories, industry insights, lessons learned, data-backed opinions</td>
+          <td>Visual content, Reels, carousels, behind-the-scenes, transformation posts</td>
+        </tr>
+        <tr>
+          <td><strong>Organic reach</strong></td>
+          <td class="winner">High — text posts regularly reach thousands with zero followers</td>
+          <td>Moderate — Reels get reach; static posts mostly reach existing followers</td>
+        </tr>
+        <tr>
+          <td><strong>Audience intent</strong></td>
+          <td class="winner">High — users are in "professional development" mode</td>
+          <td>Low — users are scrolling passively for entertainment</td>
+        </tr>
+        <tr>
+          <td><strong>Lead generation</strong></td>
+          <td class="winner">Strong for services, consulting, B2B products</td>
+          <td>Strong for products, courses, lifestyle services</td>
+        </tr>
+        <tr>
+          <td><strong>Time to grow</strong></td>
+          <td>Faster organic growth with consistent text posting</td>
+          <td>Slower unless you're posting Reels consistently</td>
+        </tr>
+        <tr>
+          <td><strong>Content effort</strong></td>
+          <td>Lower — text-first, no design required</td>
+          <td>Higher — visual quality matters significantly</td>
+        </tr>
+      </table>
+
+      <h2>When LinkedIn Is the Right Choice</h2>
+
+      <p>Choose LinkedIn as your primary platform if you are a <strong>job seeker, recruiter, consultant, freelancer, or B2B professional</strong>. If your goal is to attract clients, land a better job, establish thought leadership in a professional niche, or get speaking opportunities — LinkedIn is where your audience is actively looking for exactly what you offer.</p>
+
+      <p>LinkedIn's text-first format also makes it the lower-effort platform to maintain. A thoughtful 200-word post about a professional lesson, posted three times a week, can generate more meaningful engagement — comments from potential clients, recruiters, and collaborators — than months of Instagram Reels.</p>
+
+      <div class="callout">
+        <div class="callout-label">LinkedIn Quick Win</div>
+        <p>Start with a "story post" — write 150–200 words about one professional mistake you made and what you learned. Begin with "I made a mistake last year that cost me..." Posts that are honest, specific, and professional consistently outperform polished, promotional content on LinkedIn.</p>
+      </div>
+
+      <h2>When Instagram Is the Right Choice</h2>
+
+      <p>Choose Instagram if you are a <strong>content creator, small business owner, freelancer in a visual field (photography, design, fashion, food), coach, or anyone building a consumer-facing personal brand</strong>. If your goal is to grow an audience that eventually buys products, books services, or follows your lifestyle — Instagram's visual and discovery-driven format serves you far better.</p>
+
+      <p>Instagram also gives you more content formats to work with: static posts, carousels, Stories, Reels, and Lives. This variety lets you reach your audience in multiple ways and test what resonates most. In India especially, Instagram's large user base and the growing culture of discovering businesses through the platform makes it a powerful channel for anyone selling directly to consumers.</p>
+
+      <div class="callout">
+        <div class="callout-label">Instagram Quick Win</div>
+        <p>Post a 30-second Reel this week answering the single most common question your audience asks you. No fancy editing required — just good lighting, clear audio, and one genuinely useful answer. That format consistently earns saves and shares, which drives organic reach to new followers.</p>
+      </div>
+
+      <h2>The Honest Answer: Start With One, Then Expand</h2>
+
+      <p>Trying to build both platforms simultaneously from scratch is one of the most common personal branding mistakes. You end up posting inconsistently on both and growing slowly on neither.</p>
+
+      <p>The smarter approach: <strong>pick the platform where your audience already spends time, commit to it for 90 days, and build a consistent content rhythm before adding the second platform</strong>. Once you have a working content system on platform one, repurposing content to platform two takes a fraction of the effort it took to create it originally.</p>
+
+      <p>For most Indian digital marketers, content writers, and business professionals, LinkedIn offers faster early traction because your expertise is immediately legible to a professional audience. For creative freelancers, local businesses, and lifestyle-adjacent brands, Instagram's visual culture and discovery model will serve you better. Know your audience, pick your platform, and show up consistently.</p>
+
+      <hr class="divider">
+
+      <div class="byline">
+        <div class="byline-avatar">KS</div>
+        <div>
+          <div class="byline-name">Kunkumalla Sravani</div>
+          <div class="byline-role">Content Writer & SEO Specialist · Digital Marketer · Hyderabad</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- ARTICLE 2: Why Your Content Gets No Engagement               -->
+  <!-- ============================================================ -->
+  <div class="article-card fade-in">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="cat-tag">Content Strategy</span>
+        <span class="read-time">5 min read</span>
+        <span class="article-num">ARTICLE 02 / 03</span>
+      </div>
+      <h2 class="card-title">Why Your Content Gets No Engagement — And How to Fix It</h2>
+      <p class="card-subtitle">It's rarely bad writing. It's almost always one of these five structural problems that most content creators never think to check.</p>
+    </div>
+    <div class="card-toggle" onclick="toggleArticle('art2', this)">
+      <span class="toggle-label">Read Article</span>
+      <span class="toggle-arrow">↓</span>
+    </div>
+    <div class="article-body" id="art2">
+
+      <p>You've been creating content consistently. You're posting regularly, the writing is decent, the visuals look good — but the engagement is flat. A handful of likes, no comments, and the saves and shares you were hoping for simply aren't happening. It's one of the most demoralising experiences in digital marketing, and it happens to almost everyone who starts creating content seriously.</p>
+
+      <p>Here's the thing: when content consistently underperforms, the problem is almost never the quality of the writing. It's almost always a structural issue — something in the <em>strategy</em> behind the content, not the execution of it. Here are the five most common reasons, and exactly what to change.</p>
+
+      <h2>Reason 1: You're Writing for Yourself, Not Your Audience</h2>
+
+      <p>This is the single most common content mistake — and the hardest one to see when you're inside it. Ask yourself honestly: does your content answer a question your audience is already asking, or does it answer a question <em>you</em> find interesting?</p>
+
+      <p>The content that gets saved and shared solves a specific, felt problem. "5 Ways to Grow Your Instagram" sounds useful in theory. "Why Your Instagram Reels Are Getting 200 Views (And What to Change)" speaks directly to someone sitting with that exact frustration right now. <strong>The more specific and relatable the problem you're addressing, the more engagement your content earns.</strong></p>
+
+      <div class="callout">
+        <div class="callout-label">Audience Research Shortcut</div>
+        <p>Go to the comments section of your top 3 competitors' most popular posts. Write down the exact words people use when asking questions or expressing frustrations. Those phrases are your next 10 content topics — written in the audience's own language.</p>
+      </div>
+
+      <h2>Reason 2: Your Hook Isn't Working</h2>
+
+      <p>On every platform, you have approximately 1.5 seconds to stop someone from scrolling past your content. That's the job of the hook — the opening line of your caption, the first frame of your Reel, the headline of your carousel's first slide. Most content creators spend 90% of their time writing the body of their content and 10% on the hook. It should be the opposite.</p>
+
+      <p>A strong hook does one of three things: makes a bold, specific claim ("Most Instagram advice is wrong — here's why"), asks a question the reader is already asking themselves ("Still posting every day and getting no results?"), or reveals a counterintuitive truth ("The accounts growing fastest on Instagram in 2026 are posting <em>less</em>, not more").</p>
+
+      <h2>Reason 3: You're Not Giving People a Reason to Save</h2>
+
+      <p>Saves are the most valuable engagement signal on Instagram — more than likes, more than comments. A save tells the algorithm "this person wants to come back to this content" — which is a strong signal to show it to more people. But most content is consumed and forgotten rather than saved, because it doesn't give the reader a reason to return.</p>
+
+      <p>Content that earns saves is content people want to <strong>reference later</strong>: a checklist, a step-by-step guide, a list of tools, a template, a comparison they'll need to look up again. If you look at your last 10 posts and none of them are worth saving, that's a content mix problem worth addressing immediately.</p>
+
+      <h2>Reason 4: You're Posting at the Wrong Time — or the Wrong Frequency</h2>
+
+      <p>Timing matters more than most people realise, especially in the first hour after posting. Instagram and LinkedIn both give new content an initial distribution window — if it earns engagement quickly, the algorithm expands its reach. If it sits dormant for the first hour, it rarely recovers.</p>
+
+      <p>Check your platform's analytics to find when your specific audience is most active — don't rely on generic "best time to post" advice, because it varies significantly by industry, location, and audience demographics. For most Indian audiences on Instagram, <strong>7–9 PM on weekdays</strong> consistently outperforms other time slots. But verify this against your own data.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Engagement Trigger</div>
+        <p>End every caption with a direct question — not a generic "What do you think?" but a specific, easy-to-answer question related to the post. "Which of these 5 mistakes have you made?" or "Are you a LinkedIn person or an Instagram person?" Lower-effort questions get significantly more comments than open-ended ones.</p>
+      </div>
+
+      <h2>Reason 5: You're Creating Content, Not Conversations</h2>
+
+      <p>Engagement is a two-way exchange. If you're posting content but not engaging with the people who do comment, like, or share, you're breaking the loop. Replying to every comment — especially in the first hour after posting — dramatically increases your post's reach because each reply counts as an additional engagement signal to the algorithm.</p>
+
+      <p>Beyond your own posts: <strong>spend 15 minutes before and after every post genuinely engaging with content from accounts in your niche</strong>. Leave thoughtful comments (not "Great post!"), respond to Stories, and engage with your followers' content. The accounts growing fastest on organic reach are not just publishers — they're active participants in their communities.</p>
+
+      <h2>The One-Week Reset</h2>
+
+      <p>If your engagement has been flat for more than a month, don't just post more of the same content and hope for different results. Instead, spend one week doing this: post nothing. Spend the time doing audience research (competitor comments, DMs, polls), rewriting your hooks, identifying your top 3 performing posts from the past 3 months, and planning a month of content specifically designed to earn saves and shares. That single week of strategy will do more for your long-term engagement than a month of unfocused posting.</p>
+
+      <p>Engagement is a lagging indicator. The decisions that drive it were made weeks ago — in the research, the hook writing, the topic selection, and the posting strategy. Fix those inputs, and the outputs take care of themselves.</p>
+
+      <hr class="divider">
+
+      <div class="byline">
+        <div class="byline-avatar">KS</div>
+        <div>
+          <div class="byline-name">Kunkumalla Sravani</div>
+          <div class="byline-role">Content Writer & SEO Specialist · Digital Marketer · Hyderabad</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ============================================================ -->
+  <!-- ARTICLE 3: Repurpose One Blog Post Into 10 Pieces            -->
+  <!-- ============================================================ -->
+  <div class="article-card fade-in">
+    <div class="card-top">
+      <div class="card-meta">
+        <span class="cat-tag">Content Strategy</span>
+        <span class="read-time">6 min read</span>
+        <span class="article-num">ARTICLE 03 / 03</span>
+      </div>
+      <h2 class="card-title">How to Repurpose One Blog Post Into 10 Pieces of Content</h2>
+      <p class="card-subtitle">Create once. Distribute everywhere. Stop starting from scratch every time you open a blank page.</p>
+    </div>
+    <div class="card-toggle" onclick="toggleArticle('art3', this)">
+      <span class="toggle-label">Read Article</span>
+      <span class="toggle-arrow">↓</span>
+    </div>
+    <div class="article-body" id="art3">
+
+      <p>The most common content marketing mistake isn't a lack of ideas — it's a lack of systems. Most marketers and business owners spend hours writing a blog post, publish it once, share it once on social media, and then start from scratch the following week. That single workflow wastes an enormous amount of effort and is the main reason most content calendars collapse within a month.</p>
+
+      <p>A single well-written blog post contains enough material to fuel your entire content calendar for two to three weeks across every platform you're active on. Here's exactly how to extract that value — and the order in which to do it.</p>
+
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">Blog post written once</div></div>
+        <div class="stat-box"><div class="stat-num">10</div><div class="stat-label">Pieces of content created</div></div>
+        <div class="stat-box"><div class="stat-num">3x</div><div class="stat-label">Weeks of content calendar covered</div></div>
+      </div>
+
+      <h2>Start With the Right Blog Post</h2>
+
+      <p>Not every blog post is worth repurposing. The posts that repurpose well share three characteristics: they are <strong>evergreen</strong> (relevant and useful year-round, not tied to a trending moment), <strong>comprehensive</strong> (at least 800–1,000 words covering a topic with real depth), and <strong>practical</strong> (gives readers specific, actionable steps they can apply immediately).</p>
+
+      <p>A post titled "Complete Guide to Building a Content Calendar for Your Small Business" is a strong candidate. A post titled "Why We're Excited About Our New Office" is not. Before investing time in repurposing, ask: will this content still be useful and relevant six months from now? If yes — repurpose it. If no — publish it once and move on.</p>
+
+      <div class="callout">
+        <div class="callout-label">The Core Principle</div>
+        <p>One cornerstone blog post = 10 pieces of content across different platforms and formats. Each piece reaches a slightly different audience in a different context — without requiring you to generate a single new idea from scratch.</p>
+      </div>
+
+      <h2>The 10-Piece Repurposing Framework</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <div class="step-body">
+            <h3>Instagram Carousel (3–7 slides)</h3>
+            <p>Pull the 3–5 main tips or steps from your blog post. Each slide becomes one tip — a bold headline and 1–2 lines of explanation. Design it in Canva in under 20 minutes. The caption links to the full blog post. Carousels consistently earn the highest save rates of any Instagram content format, which means maximum algorithmic reach.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <div class="step-body">
+            <h3>Instagram Reel (30–60 seconds)</h3>
+            <p>Film yourself explaining the single most counterintuitive or surprising insight from the post. Keep it conversational — as if you're talking to a friend. Add text overlays and subtitles in CapCut (free app). End with "Full guide linked in bio." Reels are shown to non-followers, making them your primary discovery content.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <div class="step-body">
+            <h3>LinkedIn Article</h3>
+            <p>Rewrite the blog post in a more professional tone for a LinkedIn audience. Change the intro to speak directly to business professionals or job seekers. Adjust examples to be industry-specific. LinkedIn articles are indexed by Google — this single piece of content earns you SEO value and professional credibility simultaneously.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <div class="step-body">
+            <h3>LinkedIn Text Post</h3>
+            <p>Write a 150–200 word "lesson learned" post pulling one specific insight from the blog. Open with a bold, honest hook sentence. No image required — LinkedIn text posts frequently outperform image posts on organic reach. End with a question to drive comments.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">05</div>
+          <div class="step-body">
+            <h3>Twitter / X Thread</h3>
+            <p>Break the blog post into a 7–10 tweet thread. Tweet 1 = the bold claim or result. Tweets 2–9 = one actionable tip each. Tweet 10 = a brief summary and a link to the full post. Threads earn significantly more reach and engagement than single tweets on X.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">06</div>
+          <div class="step-body">
+            <h3>Email Newsletter</h3>
+            <p>Write a shorter, more personal version of the blog post — as if you're sharing the key insight with a friend over coffee. Keep it conversational, include 1–2 practical tips, and add a "Read the full guide →" link. Email has the highest conversion rate of any content distribution channel and reaches an audience that's already opted in to hear from you.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">07</div>
+          <div class="step-body">
+            <h3>Pinterest Infographic</h3>
+            <p>Turn the blog post's main steps into a tall, vertical infographic using Canva's free Pinterest templates. Pinterest is a high-traffic search engine — not just a social network — and is particularly powerful in India for how-to content in niches like food, home décor, fashion, fitness, and education.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">08</div>
+          <div class="step-body">
+            <h3>Facebook Post or Group Share</h3>
+            <p>Write a 3–4 sentence curiosity teaser ("Most people make this content mistake and don't even realise it — here's what it is...") with a link to the blog post. Share in 2–3 relevant Facebook groups in your niche, where the content adds genuine value. Facebook group traffic converts well because members have high intent around the topic.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">09</div>
+          <div class="step-body">
+            <h3>WhatsApp / Telegram Broadcast</h3>
+            <p>For Indian small businesses and freelancers especially: a short WhatsApp broadcast sharing "3 quick tips from this week's blog" generates high open rates and genuine replies. Your existing clients and leads are already on WhatsApp — meeting them there with useful content builds trust faster than any other channel.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-n">10</div>
+          <div class="step-body">
+            <h3>Your Next Blog Post Idea</h3>
+            <p>Look back at your original post. Which section generated the most questions in comments? Which point do people push back on or ask for clarification about? That sub-topic deserves its own dedicated, in-depth post. Repurposing doesn't just multiply the value of your current content — it systematically generates your next content ideas without any additional brainstorming.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Building the System: What This Looks Like Week by Week</h2>
+
+      <p><strong>Monday:</strong> Write or finalise your cornerstone blog post. Publish it on your website.</p>
+      <p><strong>Tuesday:</strong> Design the Instagram carousel and write the caption. Schedule the LinkedIn text post.</p>
+      <p><strong>Wednesday:</strong> Film and edit the Instagram Reel. Post it with a "full guide in bio" caption.</p>
+      <p><strong>Thursday:</strong> Write and publish the LinkedIn article. Send the email newsletter.</p>
+      <p><strong>Friday:</strong> Post the Twitter/X thread. Share in Facebook groups. Send the WhatsApp broadcast.</p>
+      <p><strong>Weekend:</strong> Create the Pinterest infographic. Schedule it for the following week. Note down the next blog post idea from comments.</p>
+
+      <p>That's 10 pieces of distributed content from a single piece of original writing — in under 5 hours of total work spread across the week.</p>
+
+      <h2>The Mindset Shift That Makes This Work</h2>
+
+      <p>Most content creators think in terms of "what should I post today?" Repurposing requires a different mindset: <strong>think in terms of content assets, not individual posts.</strong> Every piece of high-quality, evergreen content you create is an asset that can be reshaped, redistributed, and reused across multiple platforms and audiences.</p>
+
+      <p>The brands and individuals winning at content marketing in 2026 are not the ones creating the most content. They're the ones extracting the most value from the content they create. Building a repurposing system is the single highest-leverage change you can make to your content strategy — and it costs nothing except the time to set it up once.</p>
+
+      <hr class="divider">
+
+      <div class="byline">
+        <div class="byline-avatar">KS</div>
+        <div>
+          <div class="byline-name">Kunkumalla Sravani</div>
+          <div class="byline-role">Content Writer & SEO Specialist · Digital Marketer · Hyderabad</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end articles-wrapper -->
+
+<script>
+  function toggleArticle(id, el) {
+    const body = document.getElementById(id);
+    const arrow = el.querySelector('.toggle-arrow');
+    const label = el.querySelector('.toggle-label');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    label.textContent = isOpen ? 'Read Article' : 'Close Article';
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
